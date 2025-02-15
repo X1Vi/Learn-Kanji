@@ -10,7 +10,7 @@ export default function KanjiFlashcard() {
   const [_meaning, setMeaning] = useState("");
 
   useEffect(() => {
-    fetch("/kanji_data_with_romaji.json")
+    fetch("kanji_data_with_romaji.json")
       .then((response) => response.json())
       .then((data) => setKanjiData(Object.entries(data)))
       .catch((error) => console.error("Error loading JSON:", error));
