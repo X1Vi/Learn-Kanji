@@ -165,7 +165,7 @@ export default function KanjiFlashcard() {
           outline: "none"
         }}
       />
-      <p style={{ fontSize: "18px", color: colors.textSecondary, marginBottom: "8px" }}>Current: {currentIndex + 1} / {filteredKanji.length}</p>
+      <p style={{ fontSize: "18px", color: colors.textSecondary, marginBottom: "8px", zIndex: 2 }}>Current: {currentIndex + 1} / {filteredKanji.length}</p>
       <div style={{
         padding: "32px",
         maxWidth: "500px",
