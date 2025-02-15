@@ -119,9 +119,11 @@ export default function KanjiFlashcard() {
       flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
-      height: "100vh",
+      minHeight: "100vh",
       background: colors.background,
-      color: colors.textPrimary
+      color: colors.textPrimary,
+      padding: "20px",
+      boxSizing: "border-box"
     }}>
       <input
         type="text"
@@ -135,8 +137,9 @@ export default function KanjiFlashcard() {
           border: "1px solid #444",
           background: "#222",
           color: "#fff",
-          fontSize: "16px",
-          width: "300px",
+          fontSize: "clamp(14px, 4vw, 16px)",
+          width: "100%",
+          maxWidth: "400px",
           outline: "none"
         }}
       />
@@ -151,15 +154,17 @@ export default function KanjiFlashcard() {
           border: "1px solid #444",
           background: "#222",
           color: "#fff",
-          fontSize: "16px",
-          width: "300px",
+          fontSize: "clamp(14px, 4vw, 16px)",
+          width: "100%",
+          maxWidth: "400px",
           outline: "none"
         }}
       />
-      <p style={{ fontSize: "18px", color: colors.textSecondary, marginBottom: "8px", zIndex: 2 }}>Current: {currentIndex + 1} / {filteredKanji.length}</p>
+      <p style={{ fontSize: "clamp(16px, 4vw, 18px)", color: colors.textSecondary, marginBottom: "8px", zIndex: 2 }}>Current: {currentIndex + 1} / {filteredKanji.length}</p>
       <div style={{
-        padding: "32px",
-        maxWidth: "500px",
+        padding: "clamp(16px, 5vw, 32px)",
+        width: "100%",
+        maxWidth: "600px",
         textAlign: "center",
         border: "2px solid #444",
         borderRadius: "16px",
@@ -168,26 +173,26 @@ export default function KanjiFlashcard() {
         transition: "all 0.3s ease-in-out",
         transform: showAnswer ? "scale(1.05)" : "scale(1)"
       }}>
-        <h1 style={{ fontSize: "64px", fontWeight: "bold", marginBottom: "20px", color: colors.textPrimary, transition: "0.3s" }}>{kanji}</h1>
-        <p style={{ color: colors.textSecondary, fontSize: "22px" }}>{data.strokes} stroke(s)</p>
-        <p style={{ color: colors.textSecondary, fontSize: "20px" }}>
+        <h1 style={{ fontSize: "clamp(48px, 10vw, 64px)", fontWeight: "bold", marginBottom: "20px", color: colors.textPrimary, transition: "0.3s" }}>{kanji}</h1>
+        <p style={{ color: colors.textSecondary, fontSize: "clamp(16px, 4vw, 22px)" }}>{data.strokes} stroke(s)</p>
+        <p style={{ color: colors.textSecondary, fontSize: "clamp(14px, 4vw, 20px)" }}>
           On'yomi (Chinese reading): {data.readings_on?.join(", ")} ({data.readings_on_romaji?.join(", ")})
         </p>
-        <p style={{ color: colors.textSecondary, fontSize: "20px" }}>
+        <p style={{ color: colors.textSecondary, fontSize: "clamp(14px, 4vw, 20px)" }}>
           Kun'yomi (Japanese reading): {data.readings_kun?.join(", ")} ({data.readings_kun_romaji?.join(", ")})
         </p>
-        {showHint && <p style={{ color: colors.hint, fontSize: "20px", fontStyle: "italic" }}>Hint: {data.wk_radicals?.join(", ")}</p>}
+        {showHint && <p style={{ color: colors.hint, fontSize: "clamp(14px, 4vw, 20px)", fontStyle: "italic" }}>Hint: {data.wk_radicals?.join(", ")}</p>}
         {showAnswer ? (
-          <p style={{ color: colors.answer, fontSize: "24px", fontWeight: "bold" }}>Meaning: {data.meanings?.join(", ")}</p>
+          <p style={{ color: colors.answer, fontSize: "clamp(18px, 5vw, 24px)", fontWeight: "bold" }}>Meaning: {data.meanings?.join(", ")}</p>
         ) : (
-          <p style={{ color: colors.textSecondary, fontSize: "20px" }}>Do you know the meaning?</p>
+          <p style={{ color: colors.textSecondary, fontSize: "clamp(14px, 4vw, 20px)" }}>Do you know the meaning?</p>
         )}
         <input
           placeholder="Enter Meaning"
           onChange={(value) => {
             setMeaning(value.target.value);
           }}
-          onKeyDown={handleKeyPress} // Add keypress listener here
+          onKeyDown={handleKeyPress}
           style={{
             marginBottom: "16px",
             padding: "12px",
@@ -195,8 +200,9 @@ export default function KanjiFlashcard() {
             border: "1px solid #444",
             background: "#222",
             color: "#fff",
-            fontSize: "16px",
+            fontSize: "clamp(14px, 4vw, 16px)",
             width: "80%",
+            maxWidth: "400px",
             outline: "none"
           }}
         />
@@ -209,7 +215,8 @@ export default function KanjiFlashcard() {
             marginBottom: "16px",
             transition: "background 0.3s",
             width: "100%",
-            fontSize: "16px",
+            maxWidth: "400px",
+            fontSize: "clamp(14px, 4vw, 16px)",
             fontWeight: "bold",
             cursor: "pointer"
           }}
@@ -237,7 +244,7 @@ export default function KanjiFlashcard() {
         >
           Check Meaning
         </button>
-        <div style={{ marginTop: "24px", display: "flex", justifyContent: "center", gap: "16px" }}>
+        <div style={{ marginTop: "24px", display: "flex", justifyContent: "center", gap: "16px", flexWrap: "wrap" }}>
           <button
             style={{
               padding: "14px 24px",
@@ -245,9 +252,10 @@ export default function KanjiFlashcard() {
               color: "white",
               borderRadius: "8px",
               transition: "background 0.3s",
-              fontSize: "16px",
+              fontSize: "clamp(14px, 4vw, 16px)",
               fontWeight: "bold",
-              cursor: "pointer"
+              cursor: "pointer",
+              flex: "1 1 45%"
             }}
             onClick={() => setShowHint(true)}
           >
@@ -260,9 +268,10 @@ export default function KanjiFlashcard() {
               color: "white",
               borderRadius: "8px",
               transition: "background 0.3s",
-              fontSize: "16px",
+              fontSize: "clamp(14px, 4vw, 16px)",
               fontWeight: "bold",
-              cursor: "pointer"
+              cursor: "pointer",
+              flex: "1 1 45%"
             }}
             onClick={() => setShowAnswer(true)}
           >
@@ -276,9 +285,10 @@ export default function KanjiFlashcard() {
               color: "white",
               borderRadius: "8px",
               transition: "background 0.3s",
-              fontSize: "16px",
+              fontSize: "clamp(14px, 4vw, 16px)",
               fontWeight: "bold",
-              cursor: "pointer"
+              cursor: "pointer",
+              flex: "1 1 45%"
             }}
           >
             Previous
@@ -291,9 +301,10 @@ export default function KanjiFlashcard() {
               color: "white",
               borderRadius: "8px",
               transition: "background 0.3s",
-              fontSize: "16px",
+              fontSize: "clamp(14px, 4vw, 16px)",
               fontWeight: "bold",
-              cursor: "pointer"
+              cursor: "pointer",
+              flex: "1 1 45%"
             }}
           >
             Next
