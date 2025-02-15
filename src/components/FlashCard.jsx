@@ -46,9 +46,10 @@ export default function KanjiFlashcard() {
   };
 
   const prevKanji = () => {
-    if (currentIndex === 0) {
+    if(kanjiData[currentIndex] === kanjiData[0]){
       return;
     }
+    
     setShowAnswer(false);
     setShowHint(false);
     setCurrentIndex((prevIndex) => {
