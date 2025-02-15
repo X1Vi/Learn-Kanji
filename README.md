@@ -1,8 +1,16 @@
 # React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+You need nodejs LTS to run this.
+Install `nodejs` from https://nodejs.org/en/download
 
-Currently, two official plugins are available:
+Then `cd` into the root directory. 
+Run `npm i && npm run dev`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Once done go to http://localhost:5173/
+
+
+Commands
+Once inside the check meaning input 
+You can use ENTER to check if meaning you wrote is valid and then automatically move onto next kanji.
+You can use LSHIFT without using your mouse or touchpad to see the meaning directly.
+
