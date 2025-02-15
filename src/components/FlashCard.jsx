@@ -10,7 +10,7 @@ export default function KanjiFlashcard() {
   const [_meaning, setMeaning] = useState("");
 
   useEffect(() => {
-    fetch("kanji_data_with_romaji.json")
+    fetch("kanji_data_with_romaji_new_test.json")
       .then((response) => response.json())
       .then((data) => setKanjiData(Object.entries(data)))
       .catch((error) => console.error("Error loading JSON:", error));
@@ -46,10 +46,14 @@ export default function KanjiFlashcard() {
   };
 
   const prevKanji = () => {
+    if(isNaN(currentIndex)){
+    setCurrentIndex(0);
+    }
+
     if(kanjiData[currentIndex] === kanjiData[0]){
       return;
     }
-    
+
     setShowAnswer(false);
     setShowHint(false);
     setCurrentIndex((prevIndex) => {
@@ -146,7 +150,7 @@ export default function KanjiFlashcard() {
       />
       <input
         type="text"
-        placeholder="Enter range (e.g. 0-50)"
+        placeholder="Enter number to jump on that kanji (e.g. 0-50)"
         onBlur={handleRangeChange}
         style={{
           marginBottom: "16px",
