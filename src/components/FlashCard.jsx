@@ -34,7 +34,7 @@ export default function KanjiFlashcard() {
 
   const checkMeaning = () => {
     return data.meanings.some(meaning => _meaning.toLowerCase() === meaning.toLowerCase());
-  }
+  };
 
   const nextKanji = () => {
     setShowAnswer(false);
@@ -46,9 +46,8 @@ export default function KanjiFlashcard() {
   };
 
   const prevKanji = () => {
-    if(currentIndex === 0)
-    {
-        return;
+    if (currentIndex === 0) {
+      return;
     }
     setShowAnswer(false);
     setShowHint(false);
@@ -62,6 +61,52 @@ export default function KanjiFlashcard() {
     const newRange = e.target.value.split("-").map(Number);
     setRange(newRange);
     setCurrentIndex(newRange[0]);
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+        if(checkMeaning()) {
+            nextKanji();
+            const toast = document.createElement("div");
+            toast.textContent = "Correct";
+            toast.style.position = "fixed";
+            toast.style.bottom = "20px";
+            toast.style.left = "50%";
+            toast.style.transform = "translateX(-50%)";
+            toast.style.background = "#00ff88"; // Correct color
+            toast.style.color = "#fff";
+            toast.style.padding = "12px 24px";
+            toast.style.borderRadius = "8px";
+            toast.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.3)";
+            toast.style.zIndex = 1000;
+            document.body.appendChild(toast);
+            setTimeout(() => {
+                toast.style.transition = "opacity 0.5s";
+                toast.style.opacity = 0;
+                setTimeout(() => document.body.removeChild(toast), 500);
+            }, 2000);
+        }
+        else{
+            const toast = document.createElement("div");
+            toast.textContent = "Incorrect";
+            toast.style.position = "fixed";
+            toast.style.bottom = "20px";
+            toast.style.left = "50%";
+            toast.style.transform = "translateX(-50%)";
+            toast.style.background = "#ff4444";
+            toast.style.color = "#fff";
+            toast.style.padding = "12px 24px";
+            toast.style.borderRadius = "8px";
+            toast.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.3)";
+            toast.style.zIndex = 1000;
+            document.body.appendChild(toast);
+            setTimeout(() => {
+                toast.style.transition = "opacity 0.5s";
+                toast.style.opacity = 0;
+                setTimeout(() => document.body.removeChild(toast), 500);
+            }, 2000);
+        }
+    }
   };
 
   const colors = {
@@ -147,6 +192,7 @@ export default function KanjiFlashcard() {
           onChange={(value) => {
             setMeaning(value.target.value);
           }}
+          onKeyPress={handleKeyPress} // Add keypress listener here
           style={{
             marginBottom: "16px",
             padding: "12px",
