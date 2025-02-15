@@ -1,6 +1,6 @@
 # React + Vite
 
-You need nodejs LTS to run this.
+You need nodejs version v22.13.1 to run this.
 Install `nodejs` from https://nodejs.org/en/download
 
 Then `cd` into the root directory. 
