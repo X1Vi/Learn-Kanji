@@ -10,7 +10,7 @@ export default function KanjiFlashcard() {
   const [_meaning, setMeaning] = useState("");
 
   useEffect(() => {
-    fetch("/kanji-wanikani.json")
+    fetch("/kanji_data_with_romaji.json")
       .then((response) => response.json())
       .then((data) => setKanjiData(Object.entries(data)))
       .catch((error) => console.error("Error loading JSON:", error));
@@ -64,49 +64,40 @@ export default function KanjiFlashcard() {
   };
 
   const handleKeyPress = (e) => {
+    if (e.code === "ShiftLeft") { 
+        setShowAnswer(true);
+    }
+
     if (e.key === "Enter") {
-        if(checkMeaning()) {
+        if (checkMeaning()) {
             nextKanji();
-            const toast = document.createElement("div");
-            toast.textContent = "Correct";
-            toast.style.position = "fixed";
-            toast.style.bottom = "20px";
-            toast.style.left = "50%";
-            toast.style.transform = "translateX(-50%)";
-            toast.style.background = "#00ff88"; // Correct color
-            toast.style.color = "#fff";
-            toast.style.padding = "12px 24px";
-            toast.style.borderRadius = "8px";
-            toast.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.3)";
-            toast.style.zIndex = 1000;
-            document.body.appendChild(toast);
-            setTimeout(() => {
-                toast.style.transition = "opacity 0.5s";
-                toast.style.opacity = 0;
-                setTimeout(() => document.body.removeChild(toast), 500);
-            }, 2000);
-        }
-        else{
-            const toast = document.createElement("div");
-            toast.textContent = "Incorrect";
-            toast.style.position = "fixed";
-            toast.style.bottom = "20px";
-            toast.style.left = "50%";
-            toast.style.transform = "translateX(-50%)";
-            toast.style.background = "#ff4444";
-            toast.style.color = "#fff";
-            toast.style.padding = "12px 24px";
-            toast.style.borderRadius = "8px";
-            toast.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.3)";
-            toast.style.zIndex = 1000;
-            document.body.appendChild(toast);
-            setTimeout(() => {
-                toast.style.transition = "opacity 0.5s";
-                toast.style.opacity = 0;
-                setTimeout(() => document.body.removeChild(toast), 500);
-            }, 2000);
+            showToast("Correct", "#00ff88");
+        } else {
+            showToast("Incorrect", "#ff4444");
         }
     }
+  };
+
+  const showToast = (message, backgroundColor) => {
+    const toast = document.createElement("div");
+    toast.textContent = message;
+    toast.style.position = "fixed";
+    toast.style.bottom = "20px";
+    toast.style.left = "50%";
+    toast.style.transform = "translateX(-50%)";
+    toast.style.background = backgroundColor;
+    toast.style.color = "#fff";
+    toast.style.padding = "12px 24px";
+    toast.style.borderRadius = "8px";
+    toast.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.3)";
+    toast.style.zIndex = 1000;
+    document.body.appendChild(toast);
+
+    setTimeout(() => {
+        toast.style.transition = "opacity 0.5s";
+        toast.style.opacity = 0;
+        setTimeout(() => document.body.removeChild(toast), 500);
+    }, 2000);
   };
 
   const colors = {
@@ -179,8 +170,12 @@ export default function KanjiFlashcard() {
       }}>
         <h1 style={{ fontSize: "64px", fontWeight: "bold", marginBottom: "20px", color: colors.textPrimary, transition: "0.3s" }}>{kanji}</h1>
         <p style={{ color: colors.textSecondary, fontSize: "22px" }}>{data.strokes} stroke(s)</p>
-        <p style={{ color: colors.textSecondary, fontSize: "20px" }}>On'yomi (Chinese reading): {data.readings_on?.join(", ")}</p>
-        <p style={{ color: colors.textSecondary, fontSize: "20px" }}>Kun'yomi (Japanese reading): {data.readings_kun?.join(", ")}</p>
+        <p style={{ color: colors.textSecondary, fontSize: "20px" }}>
+          On'yomi (Chinese reading): {data.readings_on?.join(", ")} ({data.readings_on_romaji?.join(", ")})
+        </p>
+        <p style={{ color: colors.textSecondary, fontSize: "20px" }}>
+          Kun'yomi (Japanese reading): {data.readings_kun?.join(", ")} ({data.readings_kun_romaji?.join(", ")})
+        </p>
         {showHint && <p style={{ color: colors.hint, fontSize: "20px", fontStyle: "italic" }}>Hint: {data.wk_radicals?.join(", ")}</p>}
         {showAnswer ? (
           <p style={{ color: colors.answer, fontSize: "24px", fontWeight: "bold" }}>Meaning: {data.meanings?.join(", ")}</p>
@@ -192,7 +187,7 @@ export default function KanjiFlashcard() {
           onChange={(value) => {
             setMeaning(value.target.value);
           }}
-          onKeyPress={handleKeyPress} // Add keypress listener here
+          onKeyDown={handleKeyPress} // Add keypress listener here
           style={{
             marginBottom: "16px",
             padding: "12px",
