@@ -207,7 +207,9 @@ export default function KanjiFlashcard() {
           fontWeight: "bold",
           cursor: "pointer"
         }}
-        onClick={() => setShowFailedOnly(!showFailedOnly)}
+        onClick={() => {setShowFailedOnly(!showFailedOnly)
+          showFailedOnly ? setCurrentIndex(0) : null
+        }}
       >
         {showFailedOnly ? "Show All Kanji" : "Show Failed Kanji Only"}
       </button>
@@ -308,7 +310,9 @@ export default function KanjiFlashcard() {
               cursor: "pointer",
               flex: "1 1 45%"
             }}
-            onClick={() => setShowAnswer(true)}
+            onClick={() => { setShowAnswer(true)
+              setFailedKanji([...failedKanji, kanji]); // Add the current Kanji to the failed list
+            }}
           >
             Show Answer
           </button>
