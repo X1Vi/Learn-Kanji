@@ -94,6 +94,10 @@ export default function KanjiFlashcard() {
 
   const handleKeyPress = (e) => {
     if (e.code === "ShiftLeft") {
+      if (!failedKanji.includes(kanji)) { // Avoid adding duplicates
+        setFailedKanji([...failedKanji, kanji]); // Add the current Kanji to the failed list
+        showToast("Marked as Failed", "#ff4444"); // Show a toast notification
+      }
       setShowAnswer(true);
     }
 
