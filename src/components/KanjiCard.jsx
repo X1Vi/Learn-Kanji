@@ -105,12 +105,15 @@ const MatchingGame = ({ kanji, data, showKanji, kanjiArray }) => {
         {localShowKanji && (
           <div>
             <h2>Choose the Correct Kanji:</h2>
-            <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
+            <div style={{ display: "flex", gap: "8px", flexWrap: "wrap", alignItems:'center',
+                    justifyContent:'center',
+                    justifyItems:'center', }}>
               {kanjiMCQArray.map((kanjiObject) => (
                 <button
                   key={kanjiObject.kanji}
                   onClick={() => setSelectedKanji(kanjiObject.kanji)}
                   style={{
+                    
                     padding: "12px",
                     fontSize: "1.5rem",
                     fontWeight: "bold",
