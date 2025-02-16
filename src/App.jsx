@@ -44,7 +44,7 @@ const Navbar = ({ currentView, setCurrentView }) => {
 };
 
 function App() {
-  const [kanjiData, setKanjiData] = useState({});
+  const [kanjiData, setKanjiData] = useState(null);
   const [currentView, setCurrentView] = useState('kanji-list'); // Default view
 
   useEffect(() => {
@@ -56,11 +56,16 @@ function App() {
 
   return (
     <>
+      {kanjiData ? (
+      <>
       <Navbar currentView={currentView} setCurrentView={setCurrentView} />
-      <div style={{ padding: '16px' }}>
         {currentView === 'flashcard' && <KanjiFlashcard kanjiData={kanjiData} />}
         {currentView === 'kanji-list' && <KanjiList kanjiData={kanjiData} />}
-      </div>
+      </>
+      ) : (
+      <p>Loading kanji data...</p>
+      )}
+
     </>
   );
 }
