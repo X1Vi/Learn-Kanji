@@ -9,6 +9,11 @@ export default function KanjiFlashcard() {
   const [searchQuery, setSearchQuery] = useState("");
   const [_meaning, setMeaning] = useState("");
   const enterMeaningRef = useRef(null);
+  const [failedKanji, setFailedKanji] = useState(() => {
+    const storedFailedKanji = localStorage.getItem("failedKanji");
+    return storedFailedKanji ? JSON.parse(storedFailedKanji) : [];
+  });
+  const [showFailedOnly, setShowFailedOnly] = useState(false);
 
   useEffect(() => {
     fetch("kanji_data_with_romaji_new_test.json")
@@ -22,19 +27,34 @@ export default function KanjiFlashcard() {
     localStorage.setItem("range", JSON.stringify(range));
   }, [currentIndex, range]);
 
+  useEffect(() => {
+    localStorage.setItem("failedKanji", JSON.stringify(failedKanji));
+  }, [failedKanji]);
+
   if (!kanjiData) {
     return <p style={{ fontSize: "24px", textAlign: "center", marginTop: "20px", color: "#fff" }}>Loading...</p>;
   }
 
-  const filteredKanji = kanjiData.filter(([kanji, data]) =>
-    kanji.includes(searchQuery) ||
-    data.meanings.some(meaning => meaning.toLowerCase().includes(searchQuery.toLowerCase()))
-  );
+  const filteredKanji = kanjiData.filter(([kanji, data]) => {
+    const matchesSearch = kanji.includes(searchQuery) ||
+      data.meanings.some(meaning => meaning.toLowerCase().includes(searchQuery.toLowerCase()));
+
+    if (showFailedOnly) {
+      return matchesSearch && failedKanji.includes(kanji);
+    }
+    return matchesSearch;
+  });
 
   const [kanji, data] = filteredKanji[currentIndex] || ["", {}];
 
   const checkMeaning = () => {
-    return data.meanings.some(meaning => _meaning.toLowerCase() === meaning.toLowerCase());
+    const isCorrect = data.meanings.some(meaning => _meaning.toLowerCase() === meaning.toLowerCase());
+    if (isCorrect) {
+      setFailedKanji(failedKanji.filter(k => k !== kanji));
+    } else {
+      setFailedKanji([...failedKanji, kanji]);
+    }
+    return isCorrect;
   };
 
   const nextKanji = () => {
@@ -50,11 +70,11 @@ export default function KanjiFlashcard() {
   };
 
   const prevKanji = () => {
-    if(isNaN(currentIndex)){
-    setCurrentIndex(0);
+    if (isNaN(currentIndex)) {
+      setCurrentIndex(0);
     }
 
-    if(kanjiData[currentIndex] === kanjiData[0]){
+    if (kanjiData[currentIndex] === kanjiData[0]) {
       return;
     }
 
@@ -73,17 +93,17 @@ export default function KanjiFlashcard() {
   };
 
   const handleKeyPress = (e) => {
-    if (e.code === "ShiftLeft") { 
-        setShowAnswer(true);
+    if (e.code === "ShiftLeft") {
+      setShowAnswer(true);
     }
 
     if (e.key === "Enter") {
-        if (checkMeaning()) {
-            nextKanji();
-            showToast("Correct", "#00ff88");
-        } else {
-            showToast("Incorrect", "#ff4444");
-        }
+      if (checkMeaning()) {
+        nextKanji();
+        showToast("Correct", "#00ff88");
+      } else {
+        showToast("Incorrect", "#ff4444");
+      }
     }
   };
 
@@ -103,9 +123,9 @@ export default function KanjiFlashcard() {
     document.body.appendChild(toast);
 
     setTimeout(() => {
-        toast.style.transition = "opacity 0.5s";
-        toast.style.opacity = 0;
-        setTimeout(() => document.body.removeChild(toast), 500);
+      toast.style.transition = "opacity 0.5s";
+      toast.style.opacity = 0;
+      setTimeout(() => document.body.removeChild(toast), 500);
     }, 2000);
   };
 
@@ -169,6 +189,24 @@ export default function KanjiFlashcard() {
           outline: "none"
         }}
       />
+      <button
+        style={{
+          padding: "14px 24px",
+          background: showFailedOnly ? "#ff4444" : "#00ff88",
+          color: "white",
+          borderRadius: "8px",
+          marginBottom: "16px",
+          transition: "background 0.3s",
+          width: "100%",
+          maxWidth: "400px",
+          fontSize: "clamp(14px, 4vw, 16px)",
+          fontWeight: "bold",
+          cursor: "pointer"
+        }}
+        onClick={() => setShowFailedOnly(!showFailedOnly)}
+      >
+        {showFailedOnly ? "Show All Kanji" : "Show Failed Kanji Only"}
+      </button>
       <p style={{ fontSize: "clamp(16px, 4vw, 18px)", color: colors.textSecondary, marginBottom: "8px", zIndex: 2 }}>Current: {currentIndex + 1} / {filteredKanji.length}</p>
       <div style={{
         padding: "clamp(16px, 5vw, 32px)",
@@ -232,24 +270,7 @@ export default function KanjiFlashcard() {
           }}
           onClick={() => {
             const isCorrect = checkMeaning();
-            const toast = document.createElement("div");
-            toast.textContent = isCorrect ? "Correct" : "Incorrect";
-            toast.style.position = "fixed";
-            toast.style.bottom = "20px";
-            toast.style.left = "50%";
-            toast.style.transform = "translateX(-50%)";
-            toast.style.background = isCorrect ? colors.answer : "#ff4444";
-            toast.style.color = "#fff";
-            toast.style.padding = "12px 24px";
-            toast.style.borderRadius = "8px";
-            toast.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.3)";
-            toast.style.zIndex = 1000;
-            document.body.appendChild(toast);
-            setTimeout(() => {
-              toast.style.transition = "opacity 0.5s";
-              toast.style.opacity = 0;
-              setTimeout(() => document.body.removeChild(toast), 500);
-            }, 2000);
+            showToast(isCorrect ? "Correct" : "Incorrect", isCorrect ? "#00ff88" : "#ff4444");
           }}
         >
           Check Meaning
