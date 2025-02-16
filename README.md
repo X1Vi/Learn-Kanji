@@ -1,4 +1,4 @@
-# React + Vite
+Here is the live demo: http://localhost:5174/Learn-Kanji/
 
 You need nodejs version v22.13.1 to run this.
 Install `nodejs` from https://nodejs.org/en/download
