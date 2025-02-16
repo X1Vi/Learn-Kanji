@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export default function KanjiFlashcard() {
   const [kanjiData, setKanjiData] = useState(null);
@@ -8,6 +8,7 @@ export default function KanjiFlashcard() {
   const [range, setRange] = useState(() => JSON.parse(localStorage.getItem("range")) || [0, 50]);
   const [searchQuery, setSearchQuery] = useState("");
   const [_meaning, setMeaning] = useState("");
+  const enterMeaningRef = useRef(null);
 
   useEffect(() => {
     fetch("kanji_data_with_romaji_new_test.json")
@@ -43,6 +44,9 @@ export default function KanjiFlashcard() {
       const [start, end] = range;
       return prevIndex + 1 >= filteredKanji.length ? start : prevIndex + 1;
     });
+    if (enterMeaningRef.current) {
+      enterMeaningRef.current.value = "";
+    }
   };
 
   const prevKanji = () => {
@@ -193,6 +197,7 @@ export default function KanjiFlashcard() {
           <p style={{ color: colors.textSecondary, fontSize: "clamp(14px, 4vw, 20px)" }}>Do you know the meaning?</p>
         )}
         <input
+          ref={enterMeaningRef}
           placeholder="Enter Meaning"
           onChange={(value) => {
             setMeaning(value.target.value);
