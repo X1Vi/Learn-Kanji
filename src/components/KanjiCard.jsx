@@ -35,7 +35,7 @@ const MatchingGame = ({ kanji, data, showKanji }) => {
 
   const japaneseMeanings = data.readings_on || [];
   const romajiReadings = data.readings_on_romaji || [];
-
+  const meanings = data.meanings || [];
   useEffect(() => {
     if (feedback) {
       const timer = setTimeout(() => setFeedback(""), 4000);
@@ -82,6 +82,14 @@ const MatchingGame = ({ kanji, data, showKanji }) => {
       )}
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(150px, 1fr))", gap: "8px" }}>
         <div>
+            <h2>Meanings</h2>
+
+            {meanings.map((meaning, index) => (
+                <p key={index} style={{ margin: "4px 0", color: colors.textSecondary }}>
+                    {meaning}
+                </p>
+            ))}
+
           <h3>Japanese Readings (Kanji)</h3>
           {japaneseMeanings.map((japanese, index) => (
             <button
