@@ -134,30 +134,35 @@ export default function KanjiFlashcard() {
   };
 
   const colors = {
-    background: "#121212",
-    card: "#1e1e1e",
-    textPrimary: "#ffffff",
-    textSecondary: "#bbbbbb",
-    hint: "#00aaff",
-    answer: "#00ff88",
-    buttonHint: "#005f99",
-    buttonAnswer: "#007a55",
-    buttonNext: "#993300",
-    buttonPrev: "#552200"
+    background: "#0A041A", // Dark purple background
+    card: "#1E1A2F", // Dark purple card
+    textPrimary: "#FFFFFF",
+    textSecondary: "#BBBBBB",
+    hint: "#6A5ACD", // Slate blue for hints
+    answer: "#00FF88", // Bright green for answers
+    buttonHint: "#1E1A2F", // Dark slate blue for hint button
+    buttonAnswer: "#1E1A2F", // Dark green for answer button
+    buttonNext: "#1E1A2F", // Dark orange for next button
+    buttonPrev: "#1E1A2F", // Dark brown for previous button
+    border: "#6A5ACD", // Purple border
+    glow: "rgba(106, 90, 205, 0.5)", // Glow effect
   };
-
+  
   return (
-    <div style={{
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "center",
-      alignItems: "center",
-      minHeight: "100vh",
-      background: colors.background,
-      color: colors.textPrimary,
-      padding: "20px",
-      boxSizing: "border-box"
-    }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        minHeight: "100vh",
+        background: `linear-gradient(135deg, ${colors.background}, #000000)`,
+        color: colors.textPrimary,
+        padding: "20px",
+        boxSizing: "border-box",
+        fontFamily: "'Poppins', sans-serif",
+      }}
+    >
       <input
         type="text"
         placeholder="Search by kanji or meaning"
@@ -167,13 +172,14 @@ export default function KanjiFlashcard() {
           marginBottom: "16px",
           padding: "12px",
           borderRadius: "8px",
-          border: "1px solid #444",
-          background: "#222",
+          border: `1px solid ${colors.border}`,
+          background: "#1E1A2F",
           color: "#fff",
           fontSize: "clamp(14px, 4vw, 16px)",
           width: "100%",
           maxWidth: "400px",
-          outline: "none"
+          outline: "none",
+          boxShadow: `0 0 8px ${colors.glow}`,
         }}
       />
       <input
@@ -184,61 +190,100 @@ export default function KanjiFlashcard() {
           marginBottom: "16px",
           padding: "12px",
           borderRadius: "8px",
-          border: "1px solid #444",
-          background: "#222",
+          border: `1px solid ${colors.border}`,
+          background: "#1E1A2F",
           color: "#fff",
           fontSize: "clamp(14px, 4vw, 16px)",
           width: "100%",
           maxWidth: "400px",
-          outline: "none"
+          outline: "none",
+          boxShadow: `0 0 8px ${colors.glow}`,
         }}
       />
       <button
         style={{
           padding: "14px 24px",
-          background: showFailedOnly ? "#ff4444" : "#00ff88",
+          background: showFailedOnly ? "#FF4444" : "#00FF88",
           color: "white",
           borderRadius: "8px",
           marginBottom: "16px",
-          transition: "background 0.3s",
+          transition: "background 0.3s, transform 0.2s",
           width: "100%",
           maxWidth: "400px",
           fontSize: "clamp(14px, 4vw, 16px)",
           fontWeight: "bold",
-          cursor: "pointer"
+          cursor: "pointer",
+          border: `1px solid ${colors.border}`,
+          boxShadow: `0 0 8px ${colors.glow}`,
+          ":hover": {
+            transform: "scale(1.05)",
+          },
         }}
-        onClick={() => {setShowFailedOnly(!showFailedOnly)
-          showFailedOnly ? setCurrentIndex(0) : null
+        onClick={() => {
+          setShowFailedOnly(!showFailedOnly);
+          showFailedOnly ? setCurrentIndex(0) : null;
         }}
       >
         {showFailedOnly ? "Show All Kanji" : "Show Failed Kanji Only"}
       </button>
-      <p style={{ fontSize: "clamp(16px, 4vw, 18px)", color: colors.textSecondary, marginBottom: "8px", zIndex: 2 }}>Current: {currentIndex + 1} / {filteredKanji.length}</p>
-      <div style={{
-        padding: "clamp(16px, 5vw, 32px)",
-        width: "100%",
-        maxWidth: "600px",
-        textAlign: "center",
-        border: "2px solid #444",
-        borderRadius: "16px",
-        background: colors.card,
-        boxShadow: "0 6px 15px rgba(0, 0, 0, 0.5)",
-        transition: "all 0.3s ease-in-out",
-        transform: showAnswer ? "scale(1.05)" : "scale(1)"
-      }}>
-        <h1 style={{ fontSize: "clamp(48px, 10vw, 64px)", fontWeight: "bold", marginBottom: "20px", color: colors.textPrimary, transition: "0.3s" }}>{kanji}</h1>
-        <p style={{ color: colors.textSecondary, fontSize: "clamp(16px, 4vw, 22px)" }}>{data.strokes} stroke(s)</p>
+      <p
+        style={{
+          fontSize: "clamp(16px, 4vw, 18px)",
+          color: colors.textSecondary,
+          marginBottom: "8px",
+          zIndex: 2,
+        }}
+      >
+        Current: {currentIndex + 1} / {filteredKanji.length}
+      </p>
+      <div
+        style={{
+          padding: "clamp(16px, 5vw, 32px)",
+          width: "100%",
+          maxWidth: "600px",
+          textAlign: "center",
+          border: `2px solid ${colors.border}`,
+          borderRadius: "16px",
+          background: colors.card,
+          boxShadow: `0 6px 15px ${colors.glow}`,
+          transition: "all 0.3s ease-in-out",
+          transform: showAnswer ? "scale(1.05)" : "scale(1)",
+        }}
+      >
+        <h1
+          style={{
+            fontSize: "clamp(48px, 10vw, 64px)",
+            fontWeight: "bold",
+            marginBottom: "20px",
+            color: colors.textPrimary,
+            transition: "0.3s",
+            textShadow: `0 0 10px ${colors.glow}`,
+          }}
+        >
+          {kanji}
+        </h1>
+        <p style={{ color: colors.textSecondary, fontSize: "clamp(16px, 4vw, 22px)" }}>
+          {data.strokes} stroke(s)
+        </p>
         <p style={{ color: colors.textSecondary, fontSize: "clamp(14px, 4vw, 20px)" }}>
           On'yomi (Chinese reading): {data.readings_on?.join(", ")} ({data.readings_on_romaji?.join(", ")})
         </p>
         <p style={{ color: colors.textSecondary, fontSize: "clamp(14px, 4vw, 20px)" }}>
           Kun'yomi (Japanese reading): {data.readings_kun?.join(", ")} ({data.readings_kun_romaji?.join(", ")})
         </p>
-        {showHint && <p style={{ color: colors.hint, fontSize: "clamp(14px, 4vw, 20px)", fontStyle: "italic" }}>Hint: {data.wk_radicals?.join(", ")}</p>}
+        {showHint && (
+          <p style={{ color: colors.hint, fontSize: "clamp(14px, 4vw, 20px)", fontStyle: "italic" }}>
+            Hint: {data.wk_radicals?.join(", ")}
+          </p>
+        )}
         {showAnswer ? (
-          <p style={{ color: colors.answer, fontSize: "clamp(18px, 5vw, 24px)", fontWeight: "bold" }}>Meaning: {data.meanings?.join(", ")}</p>
+          <p style={{ color: colors.answer, fontSize: "clamp(18px, 5vw, 24px)", fontWeight: "bold" }}>
+            Meaning: {data.meanings?.join(", ")}
+          </p>
         ) : (
-          <p style={{ color: colors.textSecondary, fontSize: "clamp(14px, 4vw, 20px)" }}>Do you know the meaning?</p>
+          <p style={{ color: colors.textSecondary, fontSize: "clamp(14px, 4vw, 20px)" }}>
+            Do you know the meaning?
+          </p>
         )}
         <input
           ref={enterMeaningRef}
@@ -251,13 +296,14 @@ export default function KanjiFlashcard() {
             marginBottom: "16px",
             padding: "12px",
             borderRadius: "8px",
-            border: "1px solid #444",
-            background: "#222",
+            border: `1px solid ${colors.border}`,
+            background: "#1E1A2F",
             color: "#fff",
             fontSize: "clamp(14px, 4vw, 16px)",
             width: "80%",
             maxWidth: "400px",
-            outline: "none"
+            outline: "none",
+            boxShadow: `0 0 8px ${colors.glow}`,
           }}
         />
         <button
@@ -267,12 +313,17 @@ export default function KanjiFlashcard() {
             color: "white",
             borderRadius: "8px",
             marginBottom: "16px",
-            transition: "background 0.3s",
+            transition: "background 0.3s, transform 0.2s",
             width: "100%",
             maxWidth: "400px",
             fontSize: "clamp(14px, 4vw, 16px)",
             fontWeight: "bold",
-            cursor: "pointer"
+            cursor: "pointer",
+            border: `1px solid ${colors.border}`,
+            boxShadow: `0 0 8px ${colors.glow}`,
+            ":hover": {
+              transform: "scale(1.05)",
+            },
           }}
           onClick={() => {
             const isCorrect = checkMeaning();
@@ -281,18 +332,31 @@ export default function KanjiFlashcard() {
         >
           Check Meaning
         </button>
-        <div style={{ marginTop: "24px", display: "flex", justifyContent: "center", gap: "16px", flexWrap: "wrap" }}>
+        <div
+          style={{
+            marginTop: "24px",
+            display: "flex",
+            justifyContent: "center",
+            gap: "16px",
+            flexWrap: "wrap",
+          }}
+        >
           <button
             style={{
               padding: "14px 24px",
               background: colors.buttonHint,
               color: "white",
               borderRadius: "8px",
-              transition: "background 0.3s",
+              transition: "background 0.3s, transform 0.2s",
               fontSize: "clamp(14px, 4vw, 16px)",
               fontWeight: "bold",
               cursor: "pointer",
-              flex: "1 1 45%"
+              flex: "1 1 45%",
+              border: `1px solid ${colors.border}`,
+              boxShadow: `0 0 8px ${colors.glow}`,
+              ":hover": {
+                transform: "scale(1.05)",
+              },
             }}
             onClick={() => setShowHint(true)}
           >
@@ -304,13 +368,19 @@ export default function KanjiFlashcard() {
               background: colors.buttonAnswer,
               color: "white",
               borderRadius: "8px",
-              transition: "background 0.3s",
+              transition: "background 0.3s, transform 0.2s",
               fontSize: "clamp(14px, 4vw, 16px)",
               fontWeight: "bold",
               cursor: "pointer",
-              flex: "1 1 45%"
+              flex: "1 1 45%",
+              border: `1px solid ${colors.border}`,
+              boxShadow: `0 0 8px ${colors.glow}`,
+              ":hover": {
+                transform: "scale(1.05)",
+              },
             }}
-            onClick={() => { setShowAnswer(true)
+            onClick={() => {
+              setShowAnswer(true);
               setFailedKanji([...failedKanji, kanji]); // Add the current Kanji to the failed list
             }}
           >
@@ -323,11 +393,16 @@ export default function KanjiFlashcard() {
               background: colors.buttonPrev,
               color: "white",
               borderRadius: "8px",
-              transition: "background 0.3s",
+              transition: "background 0.3s, transform 0.2s",
               fontSize: "clamp(14px, 4vw, 16px)",
               fontWeight: "bold",
               cursor: "pointer",
-              flex: "1 1 45%"
+              flex: "1 1 45%",
+              border: `1px solid ${colors.border}`,
+              boxShadow: `0 0 8px ${colors.glow}`,
+              ":hover": {
+                transform: "scale(1.05)",
+              },
             }}
           >
             Previous
@@ -339,11 +414,16 @@ export default function KanjiFlashcard() {
               background: colors.buttonNext,
               color: "white",
               borderRadius: "8px",
-              transition: "background 0.3s",
+              transition: "background 0.3s, transform 0.2s",
               fontSize: "clamp(14px, 4vw, 16px)",
               fontWeight: "bold",
               cursor: "pointer",
-              flex: "1 1 45%"
+              flex: "1 1 45%",
+              border: `1px solid ${colors.border}`,
+              boxShadow: `0 0 8px ${colors.glow}`,
+              ":hover": {
+                transform: "scale(1.05)",
+              },
             }}
           >
             Next
