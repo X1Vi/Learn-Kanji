@@ -16,6 +16,18 @@ export default function KanjiFlashcard() {
   const [showFailedOnly, setShowFailedOnly] = useState(false);
 
   useEffect(() => {
+    if(showFailedOnly) {
+      localStorage.setItem("lastNonFailedKanjiIndex", currentIndex);
+      setCurrentIndex(0);
+    }else if(!showFailedOnly){
+      if(localStorage.getItem("lastNonFailedKanjiIndex") !== null){
+        setCurrentIndex(parseInt(localStorage.getItem("lastNonFailedKanjiIndex")));
+      }
+    }
+
+  },[showFailedOnly]);
+
+  useEffect(() => {
     fetch("kanji_data_with_romaji_new_test.json")
       .then((response) => response.json())
       .then((data) => setKanjiData(Object.entries(data)))
@@ -50,7 +62,7 @@ export default function KanjiFlashcard() {
   const checkMeaning = () => {
     const isCorrect = data.meanings.some(meaning => _meaning.toLowerCase() === meaning.toLowerCase());
     if (isCorrect) {
-      setFailedKanji(failedKanji.filter(k => k !== kanji));
+      // setFailedKanji(failedKanji.filter(k => k !== kanji));
     } else {
       setFailedKanji([...failedKanji, kanji]);
     }
@@ -58,6 +70,9 @@ export default function KanjiFlashcard() {
   };
 
   const nextKanji = () => {
+    if (filteredKanji[filteredKanji.length - 1] === filteredKanji[currentIndex]) {
+      return;
+    }
     setShowAnswer(false);
     setShowHint(false);
     setCurrentIndex((prevIndex) => {
@@ -72,12 +87,13 @@ export default function KanjiFlashcard() {
   const prevKanji = () => {
     if (isNaN(currentIndex)) {
       setCurrentIndex(0);
+      return;
     }
-
+  
     if (kanjiData[currentIndex] === kanjiData[0]) {
       return;
     }
-
+  
     setShowAnswer(false);
     setShowHint(false);
     setCurrentIndex((prevIndex) => {
@@ -92,11 +108,19 @@ export default function KanjiFlashcard() {
     setCurrentIndex(newRange[0]);
   };
 
+  const popKanji = () => {
+    setFailedKanji(failedKanji.filter((k) => k !== kanji));
+  };
+
+  const popAllKanji = () => {
+    setFailedKanji([]);
+  }
+
   const handleKeyPress = (e) => {
     if (e.code === "ShiftLeft") {
       if (!failedKanji.includes(kanji)) { // Avoid adding duplicates
         setFailedKanji([...failedKanji, kanji]); // Add the current Kanji to the failed list
-        showToast("Marked as Failed", "#ff4444"); // Show a toast notification
+      showToast("Marked as Failed", "#ff4444"); // Show a toast notification
       }
       setShowAnswer(true);
     }
@@ -428,6 +452,54 @@ export default function KanjiFlashcard() {
           >
             Next
           </button>
+          {showFailedOnly ? 
+          <>
+           <button
+           onClick={popAllKanji}
+           style={{
+             padding: "14px 24px",
+             background: colors.buttonNext,
+             color: "white",
+             borderRadius: "8px",
+             transition: "background 0.3s, transform 0.2s",
+             fontSize: "clamp(14px, 4vw, 16px)",
+             fontWeight: "bold",
+             cursor: "pointer",
+             flex: "1 1 45%",
+             border: `1px solid ${colors.border}`,
+             boxShadow: `0 0 8px ${colors.glow}`,
+             ":hover": {
+               transform: "scale(1.05)",
+             },
+           }}
+         >
+          Pop All Failed Kanji
+         </button>
+
+         <button
+           onClick={popKanji}
+           style={{
+             padding: "14px 24px",
+             background: colors.buttonNext,
+             color: "white",
+             borderRadius: "8px",
+             transition: "background 0.3s, transform 0.2s",
+             fontSize: "clamp(14px, 4vw, 16px)",
+             fontWeight: "bold",
+             cursor: "pointer",
+             flex: "1 1 45%",
+             border: `1px solid ${colors.border}`,
+             boxShadow: `0 0 8px ${colors.glow}`,
+             ":hover": {
+               transform: "scale(1.05)",
+             },
+           }}
+         >
+           Pop Current Kanji
+         </button>
+         </>
+          : null}
+         
         </div>
       </div>
     </div>
