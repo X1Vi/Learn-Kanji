@@ -14,6 +14,8 @@ export default function KanjiFlashcard() {
     return storedFailedKanji ? JSON.parse(storedFailedKanji) : [];
   });
   const [showFailedOnly, setShowFailedOnly] = useState(false);
+  const checkFurinagaRef = useRef(null);
+  const [showReadings, setShowReadings] = useState(false);
 
   useEffect(() => {
     if(showFailedOnly) {
@@ -247,20 +249,20 @@ export default function KanjiFlashcard() {
           setShowFailedOnly(!showFailedOnly);
           showFailedOnly ? setCurrentIndex(0) : null;
         }}
-      >
+            >
         {showFailedOnly ? "Show All Kanji" : "Show Failed Kanji Only"}
-      </button>
-      <p
+            </button>
+            <p
         style={{
           fontSize: "clamp(16px, 4vw, 18px)",
           color: colors.textSecondary,
           marginBottom: "8px",
           zIndex: 2,
         }}
-      >
+            >
         Current: {currentIndex + 1} / {filteredKanji.length}
-      </p>
-      <div
+            </p>
+            <div
         style={{
           padding: "clamp(16px, 5vw, 32px)",
           width: "100%",
@@ -273,7 +275,30 @@ export default function KanjiFlashcard() {
           transition: "all 0.3s ease-in-out",
           transform: showAnswer ? "scale(1.05)" : "scale(1)",
         }}
-      >
+            >
+
+        <button
+          style={{
+            padding: "14px 24px",
+            background: colors.buttonHint,
+            color: "white",
+            borderRadius: "8px",
+            transition: "background 0.3s, transform 0.2s",
+            fontSize: "clamp(14px, 4vw, 16px)",
+            fontWeight: "bold",
+            cursor: "pointer",
+            flex: "1 1 45%",
+            border: `1px solid ${colors.border}`,
+            boxShadow: `0 0 8px ${colors.glow}`,
+            ":hover": {
+              transform: "scale(1.05)",
+            },
+          }}
+          onClick={() => setShowReadings(!showReadings)}
+        >
+          {showReadings ? "Hide Readings" : "Show Readings"}
+        </button>
+
         <h1
           style={{
             fontSize: "clamp(48px, 10vw, 64px)",
@@ -289,12 +314,16 @@ export default function KanjiFlashcard() {
         <p style={{ color: colors.textSecondary, fontSize: "clamp(16px, 4vw, 22px)" }}>
           {data.strokes} stroke(s)
         </p>
-        <p style={{ color: colors.textSecondary, fontSize: "clamp(14px, 4vw, 20px)" }}>
-          On'yomi (Chinese reading): {data.readings_on?.join(", ")} ({data.readings_on_romaji?.join(", ")})
-        </p>
-        <p style={{ color: colors.textSecondary, fontSize: "clamp(14px, 4vw, 20px)" }}>
-          Kun'yomi (Japanese reading): {data.readings_kun?.join(", ")} ({data.readings_kun_romaji?.join(", ")})
-        </p>
+
+        {showReadings ? <>
+          <p style={{ color: colors.textSecondary, fontSize: "clamp(14px, 4vw, 20px)" }}>
+            On'yomi (Chinese reading): {data.readings_on?.join(", ")} ({data.readings_on_romaji?.join(", ")})
+          </p>
+          <p style={{ color: colors.textSecondary, fontSize: "clamp(14px, 4vw, 20px)" }}>
+            Kun'yomi (Japanese reading): {data.readings_kun?.join(", ")} ({data.readings_kun_romaji?.join(", ")})
+          </p>
+        </>: null}
+
         {showHint && (
           <p style={{ color: colors.hint, fontSize: "clamp(14px, 4vw, 20px)", fontStyle: "italic" }}>
             Hint: {data.wk_radicals?.join(", ")}
@@ -309,6 +338,52 @@ export default function KanjiFlashcard() {
             Do you know the meaning?
           </p>
         )}
+
+        <input
+          ref={checkFurinagaRef}
+          type="text"
+          placeholder="Enter furigana"
+          style={{
+            marginBottom: "16px",
+            padding: "12px",
+            borderRadius: "8px",
+            border: `1px solid ${colors.border}`,
+            background: "#1E1A2F",
+            color: "#fff",
+            fontSize: "clamp(14px, 4vw, 16px)",
+            width: "80%",
+            maxWidth: "400px",
+            outline: "none",
+            boxShadow: `0 0 8px ${colors.glow}`,
+          }}
+        />
+        <button
+          style={{
+            padding: "14px 24px",
+            background: colors.buttonHint,
+            color: "white",
+            borderRadius: "8px",
+            marginBottom: "16px",
+            transition: "background 0.3s, transform 0.2s",
+            width: "100%",
+            maxWidth: "400px",
+            fontSize: "clamp(14px, 4vw, 16px)",
+            fontWeight: "bold",
+            cursor: "pointer",
+            border: `1px solid ${colors.border}`,
+            boxShadow: `0 0 8px ${colors.glow}`,
+            ":hover": {
+              transform: "scale(1.05)",
+            },
+          }}
+          onClick={() => {
+            const furigana =  checkFurinagaRef.current.value;
+            const isFuriganaCorrect = data.readings_on_romaji?.includes(furigana) || data.readings_kun_romaji?.includes(furigana);
+            showToast(isFuriganaCorrect ? "Correct Furigana" : "Incorrect Furigana", isFuriganaCorrect ? "#00ff88" : "#ff4444");
+          }}
+        >
+          Check Furigana
+        </button>
         <input
           ref={enterMeaningRef}
           placeholder="Enter Meaning"
