@@ -81,7 +81,7 @@
         ],
         "readings_on_romaji": [
             "ni",
-            "じ"
+            "ji"
         ],
         "readings_kun_romaji": [
             "futa",
@@ -223,7 +223,7 @@
             "Person"
         ],
         "readings_on_romaji": [
-            "じn",
+            "jin",
             "nin"
         ],
         "readings_kun_romaji": [
@@ -233,7 +233,7 @@
         ],
         "wk_readings_on_romaji": [
             "nin",
-            "じn"
+            "jin"
         ],
         "wk_readings_kun_romaji": [
             "!hito",
@@ -335,7 +335,7 @@
         "readings_kun_romaji": [
             "ya",
             "ya.tsu",
-            "yaっ.tsu",
+            "yatsu.tsu",
             "you"
         ],
         "wk_readings_on_romaji": [
@@ -432,8 +432,8 @@
         ],
         "readings_on_romaji": [
             "juu",
-            "じっ",
-            "juっ"
+            "jitsu",
+            "jutsu"
         ],
         "readings_kun_romaji": [
             "too",
@@ -485,7 +485,7 @@
         "readings_kun_romaji": [
             "mi",
             "mi.tsu",
-            "miっ.tsu"
+            "mitsu.tsu"
         ],
         "wk_readings_on_romaji": [
             "san"
@@ -1581,7 +1581,7 @@
         "readings_kun_romaji": [
             "mu",
             "mu.tsu",
-            "muっ.tsu",
+            "mutsu.tsu",
             "mui"
         ],
         "wk_readings_on_romaji": [
@@ -1726,7 +1726,7 @@
         ],
         "readings_on_romaji": [
             "shu",
-            "ず"
+            "zu"
         ],
         "readings_kun_romaji": [
             "te",
@@ -1832,7 +1832,7 @@
         ],
         "readings_on_romaji": [
             "nichi",
-            "じtsu"
+            "jitsu"
         ],
         "readings_kun_romaji": [
             "hi",
@@ -1841,7 +1841,7 @@
         ],
         "wk_readings_on_romaji": [
             "nichi",
-            "じtsu"
+            "jitsu"
         ],
         "wk_readings_kun_romaji": [
             "!hi",
@@ -1980,14 +1980,14 @@
             "sui"
         ],
         "readings_kun_romaji": [
-            "miず",
-            "miず-"
+            "mizu",
+            "mizu-"
         ],
         "wk_readings_on_romaji": [
             "sui"
         ],
         "wk_readings_kun_romaji": [
-            "!miず"
+            "!mizu"
         ]
     },
     "火": {
@@ -2262,7 +2262,7 @@
         "readings_kun_romaji": [
             "yo",
             "yo.tsu",
-            "yoっ.tsu",
+            "yotsu.tsu",
             "yon"
         ],
         "wk_readings_on_romaji": [
@@ -2663,7 +2663,7 @@
         "readings_on_romaji": [
             "ritsu",
             "ryuu",
-            "riっtoru"
+            "rittoru"
         ],
         "readings_kun_romaji": [
             "ta.tsu",
@@ -2720,7 +2720,7 @@
             "ban"
         ],
         "readings_kun_romaji": [
-            "yoroず"
+            "yorozu"
         ],
         "wk_readings_on_romaji": [
             "man",
@@ -3883,8 +3883,8 @@
         "readings_kun_romaji": [
             "soto",
             "hoka",
-            "haず.su",
-            "haず.reru",
+            "hazu.su",
+            "hazu.reru",
             "to-"
         ],
         "wk_readings_on_romaji": [
@@ -3892,7 +3892,7 @@
         ],
         "wk_readings_kun_romaji": [
             "!soto",
-            "!haず"
+            "!hazu"
         ]
     },
     "市": {
@@ -4356,7 +4356,7 @@
         "readings_kun_romaji": [
             "nushi",
             "omo",
-            "aruじ"
+            "aruji"
         ],
         "wk_readings_on_romaji": [
             "shu"
@@ -5066,14 +5066,14 @@
         ],
         "readings_kun_romaji": [
             "saki",
-            "ma.ず"
+            "ma.zu"
         ],
         "wk_readings_on_romaji": [
             "sen"
         ],
         "wk_readings_kun_romaji": [
             "!saki",
-            "!maず"
+            "!mazu"
         ]
     },
     "名": {
@@ -5163,7 +5163,7 @@
             "Child"
         ],
         "readings_on_romaji": [
-            "じ"
+            "ji"
         ],
         "readings_kun_romaji": [
             "aza",
@@ -5171,7 +5171,7 @@
             "-na"
         ],
         "wk_readings_on_romaji": [
-            "じ"
+            "ji"
         ],
         "wk_readings_kun_romaji": []
     },
@@ -5259,7 +5259,7 @@
         ],
         "readings_on_romaji": [
             "sou",
-            "saっ"
+            "satsu"
         ],
         "readings_kun_romaji": [
             "haya.i",
@@ -5479,13 +5479,13 @@
             "Ear"
         ],
         "readings_on_romaji": [
-            "じ"
+            "ji"
         ],
         "readings_kun_romaji": [
             "mimi"
         ],
         "wk_readings_on_romaji": [
-            "!じ"
+            "!ji"
         ],
         "wk_readings_kun_romaji": [
             "mimi"
@@ -6030,7 +6030,7 @@
         ],
         "readings_on_romaji": [
             "shi",
-            "じ"
+            "ji"
         ],
         "readings_kun_romaji": [
             "tsuka.eru"
@@ -6228,10 +6228,10 @@
             "kou"
         ],
         "readings_kun_romaji": [
-            "maじ.waru",
-            "maじ.eru",
-            "ma.じru",
-            "maじ.ru",
+            "maji.waru",
+            "maji.eru",
+            "ma.jiru",
+            "maji.ru",
             "ma.zaru",
             "ma.zeru",
             "-ka.u",
@@ -6243,7 +6243,7 @@
             "kou"
         ],
         "wk_readings_kun_romaji": [
-            "!maじ",
+            "!maji",
             "!ma",
             "!ka"
         ]
@@ -6383,7 +6383,7 @@
             "dou"
         ],
         "readings_kun_romaji": [
-            "ona.じ"
+            "ona.ji"
         ],
         "wk_readings_on_romaji": [
             "dou"
@@ -6825,16 +6825,16 @@
             "Self"
         ],
         "readings_on_romaji": [
-            "じ",
+            "ji",
             "shi"
         ],
         "readings_kun_romaji": [
-            "miずka.ra",
-            "ono.ずkara",
-            "ono.ずto"
+            "mizuka.ra",
+            "ono.zukara",
+            "ono.zuto"
         ],
         "wk_readings_on_romaji": [
-            "じ",
+            "ji",
             "shi"
         ],
         "wk_readings_kun_romaji": []
@@ -7196,7 +7196,7 @@
             "Ice"
         ],
         "readings_on_romaji": [
-            "ず",
+            "zu",
             "to"
         ],
         "readings_kun_romaji": [
@@ -7204,7 +7204,7 @@
             "haka.ru"
         ],
         "wk_readings_on_romaji": [
-            "ず",
+            "zu",
             "to"
         ],
         "wk_readings_kun_romaji": [
@@ -8293,12 +8293,12 @@
         ],
         "readings_on_romaji": [
             "chi",
-            "じ"
+            "ji"
         ],
         "readings_kun_romaji": [],
         "wk_readings_on_romaji": [
             "chi",
-            "^じ"
+            "^ji"
         ],
         "wk_readings_kun_romaji": []
     },
@@ -8386,7 +8386,7 @@
             "zen"
         ],
         "readings_kun_romaji": [
-            "maっta.ku",
+            "matta.ku",
             "sube.te"
         ],
         "wk_readings_on_romaji": [
@@ -8394,7 +8394,7 @@
         ],
         "wk_readings_kun_romaji": [
             "!sube",
-            "!maっta"
+            "!matta"
         ]
     },
     "向": {
@@ -8707,7 +8707,7 @@
             "Lack"
         ],
         "readings_on_romaji": [
-            "じ",
+            "ji",
             "shi"
         ],
         "readings_kun_romaji": [
@@ -8715,7 +8715,7 @@
             "tsugi"
         ],
         "wk_readings_on_romaji": [
-            "じ"
+            "ji"
         ],
         "wk_readings_kun_romaji": [
             "!tsugi"
@@ -8798,13 +8798,13 @@
             "you"
         ],
         "readings_kun_romaji": [
-            "hitsuじ"
+            "hitsuji"
         ],
         "wk_readings_on_romaji": [
             "you"
         ],
         "wk_readings_kun_romaji": [
-            "!hitsuじ"
+            "!hitsuji"
         ]
     },
     "血": {
@@ -9394,8 +9394,8 @@
         ],
         "readings_on_romaji": [
             "choku",
-            "じki",
-            "じka"
+            "jiki",
+            "jika"
         ],
         "readings_kun_romaji": [
             "tada.chini",
@@ -9407,7 +9407,7 @@
         ],
         "wk_readings_on_romaji": [
             "choku",
-            "じki"
+            "jiki"
         ],
         "wk_readings_kun_romaji": [
             "!nao"
@@ -10071,7 +10071,7 @@
         ],
         "readings_on_romaji": [
             "shoku",
-            "じki"
+            "jiki"
         ],
         "readings_kun_romaji": [
             "ku.u",
@@ -10316,14 +10316,14 @@
             "shi"
         ],
         "readings_kun_romaji": [
-            "uじ",
-            "-uじ"
+            "uji",
+            "-uji"
         ],
         "wk_readings_on_romaji": [
             "shi"
         ],
         "wk_readings_kun_romaji": [
-            "!uじ"
+            "!uji"
         ]
     },
     "由": {
@@ -10635,7 +10635,7 @@
             "i"
         ],
         "readings_kun_romaji": [
-            "moっ.te"
+            "motsu.te"
         ],
         "wk_readings_on_romaji": [
             "i"
@@ -10725,7 +10725,7 @@
             "hitsu"
         ],
         "readings_kun_romaji": [
-            "kanara.ず"
+            "kanara.zu"
         ],
         "wk_readings_on_romaji": [
             "hitsu"
@@ -10781,7 +10781,7 @@
         "readings_kun_romaji": [
             "ima.da",
             "ma.da",
-            "hitsuじ"
+            "hitsuji"
         ],
         "wk_readings_on_romaji": [
             "mi"
@@ -10789,7 +10789,7 @@
         "wk_readings_kun_romaji": [
             "!ma",
             "!ima",
-            "!hitsuじ"
+            "!hitsuji"
         ]
     },
     "末": {
@@ -11074,14 +11074,14 @@
             "Temple"
         ],
         "readings_on_romaji": [
-            "じ"
+            "ji"
         ],
         "readings_kun_romaji": [
             "toki",
             "-doki"
         ],
         "wk_readings_on_romaji": [
-            "じ"
+            "ji"
         ],
         "wk_readings_kun_romaji": [
             "!toki"
@@ -11787,7 +11787,7 @@
         ],
         "readings_kun_romaji": [
             "kuro",
-            "kuro.ずmu",
+            "kuro.zumu",
             "kuro.i"
         ],
         "wk_readings_on_romaji": [
@@ -11986,13 +11986,13 @@
         ],
         "readings_on_romaji": [
             "juu",
-            "jiゅu",
+            "juu",
             "chuu"
         ],
         "readings_kun_romaji": [
             "su.mu",
             "su.mau",
-            "-ず.mai"
+            "-zu.mai"
         ],
         "wk_readings_on_romaji": [
             "juu"
@@ -13134,18 +13134,18 @@
             "shu"
         ],
         "readings_kun_romaji": [
-            "kaず",
+            "kazu",
             "kazo.eru",
             "shibashiba",
             "se.meru",
-            "waずrawa.shii"
+            "wazurawa.shii"
         ],
         "wk_readings_on_romaji": [
             "suu"
         ],
         "wk_readings_kun_romaji": [
             "!kazo",
-            "!kaず"
+            "!kazu"
         ]
     },
     "楽": {
@@ -13476,8 +13476,8 @@
             "Brush"
         ],
         "readings_on_romaji": [
-            "じ",
-            "ず"
+            "ji",
+            "zu"
         ],
         "readings_kun_romaji": [
             "koto",
@@ -13485,7 +13485,7 @@
             "tsuka.eru"
         ],
         "wk_readings_on_romaji": [
-            "じ"
+            "ji"
         ],
         "wk_readings_kun_romaji": [
             "!koto",
@@ -13800,7 +13800,7 @@
             "Spring"
         ],
         "readings_on_romaji": [
-            "じtsu",
+            "jitsu",
             "shitsu"
         ],
         "readings_kun_romaji": [
@@ -13811,7 +13811,7 @@
             "michi.ru"
         ],
         "wk_readings_on_romaji": [
-            "じtsu"
+            "jitsu"
         ],
         "wk_readings_kun_romaji": [
             "!mi"
@@ -14348,7 +14348,7 @@
             "Temple"
         ],
         "readings_on_romaji": [
-            "じ"
+            "ji"
         ],
         "readings_kun_romaji": [
             "mo.tsu",
@@ -14356,7 +14356,7 @@
             "mo.teru"
         ],
         "wk_readings_on_romaji": [
-            "じ"
+            "ji"
         ],
         "wk_readings_kun_romaji": [
             "!mo"
@@ -14986,13 +14986,13 @@
             "sha"
         ],
         "readings_kun_romaji": [
-            "arakaじ.me"
+            "arakaji.me"
         ],
         "wk_readings_on_romaji": [
             "yo"
         ],
         "wk_readings_kun_romaji": [
-            "!arakaじ"
+            "!arakaji"
         ]
     },
     "新": {
@@ -15293,15 +15293,15 @@
             "shi"
         ],
         "readings_kun_romaji": [
-            "haじ.meru",
-            "-haじ.meru",
-            "haじ.maru"
+            "haji.meru",
+            "-haji.meru",
+            "haji.maru"
         ],
         "wk_readings_on_romaji": [
             "shi"
         ],
         "wk_readings_kun_romaji": [
-            "!haじ"
+            "!haji"
         ]
     },
     "起": {
@@ -15895,7 +15895,7 @@
         "readings_kun_romaji": [
             "karu.i",
             "karo.yaka",
-            "karo.nじru"
+            "karo.njiru"
         ],
         "wk_readings_on_romaji": [
             "!kei"
@@ -16231,14 +16231,14 @@
             "ru"
         ],
         "readings_kun_romaji": [
-            "-じ",
+            "-ji",
             "michi"
         ],
         "wk_readings_on_romaji": [
             "ro"
         ],
         "wk_readings_kun_romaji": [
-            "!じ",
+            "!ji",
             "!michi"
         ]
     },
@@ -16642,7 +16642,7 @@
             "sen"
         ],
         "readings_kun_romaji": [
-            "suじ"
+            "suji"
         ],
         "wk_readings_on_romaji": [
             "sen"
@@ -16849,7 +16849,7 @@
         ],
         "readings_on_romaji": [
             "tou",
-            "ず",
+            "zu",
             "to"
         ],
         "readings_kun_romaji": [
@@ -16859,7 +16859,7 @@
             "kaburi"
         ],
         "wk_readings_on_romaji": [
-            "!ず",
+            "!zu",
             "!tou"
         ],
         "wk_readings_kun_romaji": [
@@ -17004,14 +17004,14 @@
             "shu"
         ],
         "readings_kun_romaji": [
-            "moっto.mo",
+            "motto.mo",
             "tsuma"
         ],
         "wk_readings_on_romaji": [
             "sai"
         ],
         "wk_readings_kun_romaji": [
-            "!moっto"
+            "!motto"
         ]
     },
     "求": {
@@ -17557,8 +17557,8 @@
             "sho"
         ],
         "readings_kun_romaji": [
-            "haじ.me",
-            "haじ.mete",
+            "haji.me",
+            "haji.mete",
             "hatsu",
             "hatsu-",
             "ui-",
@@ -17569,7 +17569,7 @@
             "sho"
         ],
         "wk_readings_kun_romaji": [
-            "!haじ",
+            "!haji",
             "!hatsu",
             "!so",
             "!zo"
@@ -17761,7 +17761,7 @@
         "readings_kun_romaji": [
             "rou.suru",
             "itawa.ru",
-            "ita.ずki",
+            "ita.zuki",
             "negira",
             "tsuka.reru",
             "negira.u"
@@ -17914,7 +17914,7 @@
         ],
         "readings_kun_romaji": [
             "hana.su",
-            "-っpana.shi",
+            "-ppana.shi",
             "hana.tsu",
             "hana.reru",
             "ko.ku",
@@ -18298,7 +18298,7 @@
         ],
         "readings_on_romaji": [
             "shin",
-            "じn"
+            "jin"
         ],
         "readings_kun_romaji": [
             "kami",
@@ -18881,14 +18881,14 @@
             "mi"
         ],
         "readings_kun_romaji": [
-            "aじ",
-            "aじ.wau"
+            "aji",
+            "aji.wau"
         ],
         "wk_readings_on_romaji": [
             "mi"
         ],
         "wk_readings_kun_romaji": [
-            "!aじ"
+            "!aji"
         ]
     },
     "待": {
@@ -19715,8 +19715,8 @@
             "niku.i",
             "-niku.i",
             "aa",
-            "iずkuni",
-            "iずkunzo",
+            "izukuni",
+            "izukunzo",
             "niku.mu"
         ],
         "wk_readings_on_romaji": [
@@ -20509,13 +20509,13 @@
             "tan"
         ],
         "readings_kun_romaji": [
-            "miじka.i"
+            "mijika.i"
         ],
         "wk_readings_on_romaji": [
             "tan"
         ],
         "wk_readings_kun_romaji": [
-            "!miじka"
+            "!mijika"
         ]
     },
     "野": {
@@ -20602,13 +20602,13 @@
             "sen"
         ],
         "readings_kun_romaji": [
-            "iずmi"
+            "izumi"
         ],
         "wk_readings_on_romaji": [
             "sen"
         ],
         "wk_readings_kun_romaji": [
-            "!iずmi"
+            "!izumi"
         ]
     },
     "合": {
@@ -20658,8 +20658,8 @@
         ],
         "readings_on_romaji": [
             "gou",
-            "gaっ",
-            "kaっ"
+            "gatsu",
+            "katsu"
         ],
         "readings_kun_romaji": [
             "a.u",
@@ -20674,7 +20674,7 @@
         ],
         "wk_readings_on_romaji": [
             "gou",
-            "gaっ"
+            "gatsu"
         ],
         "wk_readings_kun_romaji": [
             "!a",
@@ -22520,7 +22520,7 @@
             "shutsu"
         ],
         "readings_kun_romaji": [
-            "soっ.suru",
+            "sotsu.suru",
             "o.eru",
             "o.waru",
             "tsuini",
@@ -22618,7 +22618,7 @@
         "readings_kun_romaji": [
             "mai.ru",
             "mai-",
-            "maじwaru",
+            "majiwaru",
             "mitsu"
         ],
         "wk_readings_on_romaji": [
@@ -23844,13 +23844,13 @@
             "Temple"
         ],
         "readings_on_romaji": [
-            "じ"
+            "ji"
         ],
         "readings_kun_romaji": [
             "tera"
         ],
         "wk_readings_on_romaji": [
-            "!じ"
+            "!ji"
         ],
         "wk_readings_kun_romaji": [
             "tera"
@@ -24608,7 +24608,7 @@
             "bu"
         ],
         "readings_kun_romaji": [
-            "oっto",
+            "otto",
             "sore"
         ],
         "wk_readings_on_romaji": [
@@ -24616,7 +24616,7 @@
             "fu"
         ],
         "wk_readings_kun_romaji": [
-            "!oっto"
+            "!otto"
         ]
     },
     "建": {
@@ -24784,8 +24784,8 @@
         ],
         "readings_on_romaji": [
             "hou",
-            "haっ",
-            "hoっ",
+            "hatsu",
+            "hotsu",
             "furan"
         ],
         "readings_kun_romaji": [
@@ -25138,13 +25138,13 @@
             "chiku"
         ],
         "readings_kun_romaji": [
-            "kiず.ku"
+            "kizu.ku"
         ],
         "wk_readings_on_romaji": [
             "chiku"
         ],
         "wk_readings_kun_romaji": [
-            "!kiず"
+            "!kizu"
         ]
     },
     "晩": {
@@ -26122,7 +26122,7 @@
             "Machine"
         ],
         "readings_on_romaji": [
-            "じ",
+            "ji",
             "chi"
         ],
         "readings_kun_romaji": [
@@ -26132,7 +26132,7 @@
             "nao.su"
         ],
         "wk_readings_on_romaji": [
-            "じ",
+            "ji",
             "chi"
         ],
         "wk_readings_kun_romaji": [
@@ -26266,14 +26266,14 @@
             "Spicy"
         ],
         "readings_on_romaji": [
-            "じ"
+            "ji"
         ],
         "readings_kun_romaji": [
             "ya.meru",
             "ina.mu"
         ],
         "wk_readings_on_romaji": [
-            "じ"
+            "ji"
         ],
         "wk_readings_kun_romaji": [
             "!ya"
@@ -26730,13 +26730,13 @@
             "sen"
         ],
         "readings_kun_romaji": [
-            "moっpa.ra"
+            "moppa.ra"
         ],
         "wk_readings_on_romaji": [
             "sen"
         ],
         "wk_readings_kun_romaji": [
-            "!moっpa"
+            "!moppa"
         ]
     },
     "冒": {
@@ -27878,7 +27878,7 @@
             "hi"
         ],
         "readings_kun_romaji": [
-            "ara.ず"
+            "ara.zu"
         ],
         "wk_readings_on_romaji": [
             "hi"
@@ -28161,7 +28161,7 @@
             "satsu"
         ],
         "wk_readings_kun_romaji": [
-            "!saっ"
+            "!satsu"
         ]
     },
     "底": {
@@ -28670,7 +28670,7 @@
         "readings_kun_romaji": [
             "oshi.eru",
             "yo.mu",
-            "kun.ずru"
+            "kun.zuru"
         ],
         "wk_readings_on_romaji": [
             "kun"
@@ -29408,7 +29408,7 @@
             "dou"
         ],
         "readings_kun_romaji": [
-            "nouずru"
+            "nouzuru"
         ],
         "wk_readings_on_romaji": [
             "nou"
@@ -29487,8 +29487,8 @@
             "sen"
         ],
         "readings_kun_romaji": [
-            "shiずka",
-            "yuず.ru"
+            "shizuka",
+            "yuzu.ru"
         ],
         "wk_readings_on_romaji": [
             "zen"
@@ -29664,16 +29664,16 @@
             "jou"
         ],
         "readings_kun_romaji": [
-            "shiず-",
-            "shiず.ka",
-            "shiず.maru",
-            "shiず.meru"
+            "shizu-",
+            "shizu.ka",
+            "shizu.maru",
+            "shizu.meru"
         ],
         "wk_readings_on_romaji": [
             "sei"
         ],
         "wk_readings_kun_romaji": [
-            "!shiず"
+            "!shizu"
         ]
     },
     "句": {
@@ -29950,7 +29950,7 @@
         "readings_kun_romaji": [
             "fushi",
             "-bushi",
-            "noっto"
+            "notto"
         ],
         "wk_readings_on_romaji": [
             "setsu"
@@ -30449,7 +30449,7 @@
         ],
         "readings_on_romaji": [
             "reki",
-            "reっki"
+            "rekki"
         ],
         "readings_kun_romaji": [],
         "wk_readings_on_romaji": [
@@ -30861,8 +30861,8 @@
             "kon"
         ],
         "readings_kun_romaji": [
-            "ma.じru",
-            "-ma.じri",
+            "ma.jiru",
+            "-ma.jiri",
             "ma.zaru",
             "ma.zeru",
             "ko.mu"
@@ -30974,7 +30974,7 @@
             "to"
         ],
         "readings_kun_romaji": [
-            "itaずra",
+            "itazura",
             "ada"
         ],
         "wk_readings_on_romaji": [
@@ -31804,7 +31804,7 @@
         "readings_kun_romaji": [
             "kata.i",
             "-gata.i",
-            "muずka.shii",
+            "muzuka.shii",
             "muzuka.shii",
             "mutsuka.shii",
             "-niku.i"
@@ -31813,7 +31813,7 @@
             "nan"
         ],
         "wk_readings_kun_romaji": [
-            "!muずka"
+            "!muzuka"
         ]
     },
     "妨": {
@@ -33121,8 +33121,8 @@
         ],
         "readings_kun_romaji": [
             "su.mu",
-            "-ず.mi",
-            "-ずmi",
+            "-zu.mi",
+            "-zumi",
             "su.manai",
             "su.masu",
             "-su.masu",
@@ -34040,7 +34040,7 @@
         ],
         "readings_kun_romaji": [
             "eda",
-            "suじ"
+            "suji"
         ],
         "wk_readings_on_romaji": [
             "jou"
@@ -34528,13 +34528,13 @@
             "hatsu"
         ],
         "readings_kun_romaji": [
-            "baっ.suru"
+            "batsu.suru"
         ],
         "wk_readings_on_romaji": [
             "batsu"
         ],
         "wk_readings_kun_romaji": [
-            "!baっ"
+            "!batsu"
         ]
     },
     "誕": {
@@ -34714,7 +34714,7 @@
         ],
         "readings_on_romaji": [
             "bou",
-            "boっ"
+            "botsu"
         ],
         "readings_kun_romaji": [],
         "wk_readings_on_romaji": [
@@ -35111,7 +35111,7 @@
         ],
         "readings_kun_romaji": [
             "ikio.i",
-            "haずmi"
+            "hazumi"
         ],
         "wk_readings_on_romaji": [
             "sei",
@@ -35205,14 +35205,14 @@
             "Jackhammer"
         ],
         "readings_on_romaji": [
-            "じ",
+            "ji",
             "shi"
         ],
         "readings_kun_romaji": [
             "shime.su"
         ],
         "wk_readings_on_romaji": [
-            "じ",
+            "ji",
             "shi"
         ],
         "wk_readings_kun_romaji": [
@@ -35385,14 +35385,14 @@
             "dou"
         ],
         "readings_kun_romaji": [
-            "fuじ"
+            "fuji"
         ],
         "wk_readings_on_romaji": [
             "!tou",
             "!dou"
         ],
         "wk_readings_kun_romaji": [
-            "fuじ"
+            "fuji"
         ]
     },
     "副": {
@@ -36582,12 +36582,12 @@
             "jun"
         ],
         "readings_kun_romaji": [
-            "jun.じru",
-            "jun.ずru",
+            "jun.jiru",
+            "jun.zuru",
             "nazora.eru",
             "nori",
             "hito.shii",
-            "miずmori"
+            "mizumori"
         ],
         "wk_readings_on_romaji": [
             "jun"
@@ -36630,13 +36630,13 @@
             "soku"
         ],
         "readings_kun_romaji": [
-            "noっto.ru"
+            "notto.ru"
         ],
         "wk_readings_on_romaji": [
             "soku"
         ],
         "wk_readings_kun_romaji": [
-            "!noっto"
+            "!notto"
         ]
     },
     "備": {
@@ -38883,7 +38883,7 @@
         ],
         "readings_kun_romaji": [
             "ata.eru",
-            "aずka.ru",
+            "azuka.ru",
             "kumi.suru",
             "tomoni"
         ],
@@ -39310,13 +39310,13 @@
             "so"
         ],
         "readings_kun_romaji": [
-            "uっta.eru"
+            "utta.eru"
         ],
         "wk_readings_on_romaji": [
             "so"
         ],
         "wk_readings_kun_romaji": [
-            "!uっta"
+            "!utta"
         ]
     },
     "訟": {
@@ -40490,14 +40490,14 @@
             "ju"
         ],
         "readings_kun_romaji": [
-            "saず.keru",
-            "saず.karu"
+            "sazu.keru",
+            "sazu.karu"
         ],
         "wk_readings_on_romaji": [
             "ju"
         ],
         "wk_readings_kun_romaji": [
-            "!saず"
+            "!sazu"
         ]
     },
     "印": {
@@ -40546,7 +40546,7 @@
         ],
         "readings_kun_romaji": [
             "shirushi",
-            "-じrushi",
+            "-jirushi",
             "shiru.su"
         ],
         "wk_readings_on_romaji": [
@@ -40598,9 +40598,9 @@
         ],
         "readings_kun_romaji": [
             "tsuku.ru",
-            "haじ.meru",
-            "kiず",
-            "keず.shikeru"
+            "haji.meru",
+            "kizu",
+            "kezu.shikeru"
         ],
         "wk_readings_on_romaji": [
             "sou"
@@ -42755,16 +42755,16 @@
             "hou"
         ],
         "readings_kun_romaji": [
-            "otoず.reru",
-            "taず.neru",
+            "otozu.reru",
+            "tazu.neru",
             "to.u"
         ],
         "wk_readings_on_romaji": [
             "hou"
         ],
         "wk_readings_kun_romaji": [
-            "!taず",
-            "!otoず"
+            "!tazu",
+            "!otozu"
         ]
     },
     "怒": {
@@ -43030,7 +43030,7 @@
             "shi.mari",
             "shi.meru",
             "-shi.me",
-            "-じ.me"
+            "-ji.me"
         ],
         "wk_readings_on_romaji": [
             "tei"
@@ -43685,17 +43685,17 @@
             "Legs"
         ],
         "readings_on_romaji": [
-            "じ",
+            "ji",
             "ni",
             "gei"
         ],
         "readings_kun_romaji": [
             "ko",
             "-ko",
-            "-っko"
+            "-kko"
         ],
         "wk_readings_on_romaji": [
-            "じ"
+            "ji"
         ],
         "wk_readings_kun_romaji": [
             "!ko"
@@ -43896,7 +43896,7 @@
         ],
         "readings_on_romaji": [
             "chi",
-            "じ"
+            "ji"
         ],
         "readings_kun_romaji": [
             "itokenai",
@@ -44359,7 +44359,7 @@
             "ku.shiki",
             "aya.shii",
             "kushi",
-            "meずra.shii"
+            "mezura.shii"
         ],
         "wk_readings_on_romaji": [
             "ki"
@@ -45197,7 +45197,7 @@
             "hai"
         ],
         "readings_kun_romaji": [
-            "sakaずki"
+            "sakazuki"
         ],
         "wk_readings_on_romaji": [
             "hai"
@@ -45887,12 +45887,12 @@
         ],
         "readings_on_romaji": [
             "shin",
-            "じn"
+            "jin"
         ],
         "readings_kun_romaji": [],
         "wk_readings_on_romaji": [
             "shin",
-            "じn"
+            "jin"
         ],
         "wk_readings_kun_romaji": []
     },
@@ -46354,7 +46354,7 @@
         "readings_kun_romaji": [
             "kowa.i",
             "kowa.garu",
-            "o.じru",
+            "o.jiru",
             "oso.reru"
         ],
         "wk_readings_on_romaji": [
@@ -47076,14 +47076,14 @@
             "bin"
         ],
         "readings_kun_romaji": [
-            "maず.shii"
+            "mazu.shii"
         ],
         "wk_readings_on_romaji": [
             "bin",
             "^hin"
         ],
         "wk_readings_kun_romaji": [
-            "!maず"
+            "!mazu"
         ]
     },
     "乏": {
@@ -47211,14 +47211,14 @@
             "yo"
         ],
         "readings_kun_romaji": [
-            "aず.keru",
-            "aず.karu"
+            "azu.keru",
+            "azu.karu"
         ],
         "wk_readings_on_romaji": [
             "yo"
         ],
         "wk_readings_kun_romaji": [
-            "!aず"
+            "!azu"
         ]
     },
     "延": {
@@ -47406,7 +47406,7 @@
             "natsu.kashimu",
             "natsu.ku",
             "natsu.keru",
-            "naず.keru",
+            "nazu.keru",
             "ida.ku",
             "omo.u"
         ],
@@ -47466,7 +47466,7 @@
         "readings_kun_romaji": [
             "o.su",
             "o.shi-",
-            "o.っ-",
+            "o.tsu-",
             "o.saeru",
             "osa.eru"
         ],
@@ -48474,7 +48474,7 @@
         ],
         "readings_on_romaji": [
             "jo",
-            "じ"
+            "ji"
         ],
         "readings_kun_romaji": [
             "nozo.ku",
@@ -48482,7 +48482,7 @@
         ],
         "wk_readings_on_romaji": [
             "jo",
-            "^じ"
+            "^ji"
         ],
         "wk_readings_kun_romaji": [
             "!nozo"
@@ -48524,17 +48524,17 @@
             "Measurement"
         ],
         "readings_on_romaji": [
-            "じn"
+            "jin"
         ],
         "readings_kun_romaji": [
-            "taず.neru",
+            "tazu.neru",
             "hiro"
         ],
         "wk_readings_on_romaji": [
-            "じn"
+            "jin"
         ],
         "wk_readings_kun_romaji": [
-            "!taず",
+            "!tazu",
             "!hiro"
         ]
     },
@@ -48719,7 +48719,7 @@
         ],
         "readings_kun_romaji": [
             "doro",
-            "naず.mu"
+            "nazu.mu"
         ],
         "wk_readings_on_romaji": [
             "dei"
@@ -49242,7 +49242,7 @@
             "fun"
         ],
         "readings_kun_romaji": [
-            "deshimeーtoru",
+            "deshimeetoru",
             "ko",
             "kona"
         ],
@@ -49288,7 +49288,7 @@
             "myaku"
         ],
         "readings_kun_romaji": [
-            "suじ"
+            "suji"
         ],
         "wk_readings_on_romaji": [
             "myaku"
@@ -49459,7 +49459,7 @@
             "Person"
         ],
         "readings_on_romaji": [
-            "じ"
+            "ji"
         ],
         "readings_kun_romaji": [
             "ni.ru",
@@ -49467,7 +49467,7 @@
         ],
         "wk_readings_on_romaji": [
             "ne",
-            "じ"
+            "ji"
         ],
         "wk_readings_kun_romaji": [
             "!ni"
@@ -50422,8 +50422,8 @@
             "zou"
         ],
         "readings_kun_romaji": [
-            "maじ.eru",
-            "maじ.ru"
+            "maji.eru",
+            "maji.ru"
         ],
         "wk_readings_on_romaji": [
             "zatsu",
@@ -50659,7 +50659,7 @@
             "shou"
         ],
         "readings_kun_romaji": [
-            "kiず",
+            "kizu",
             "ita.mu",
             "ita.meru"
         ],
@@ -50667,7 +50667,7 @@
             "shou"
         ],
         "wk_readings_kun_romaji": [
-            "!kiず",
+            "!kizu",
             "!ita"
         ]
     },
@@ -51055,7 +51055,7 @@
             "yoku"
         ],
         "readings_kun_romaji": [
-            "hoっ.suru",
+            "hotsu.suru",
             "ho.shii"
         ],
         "wk_readings_on_romaji": [
@@ -51303,7 +51303,7 @@
             "-zome",
             "so.maru",
             "shi.miru",
-            "-じ.miru",
+            "-ji.miru",
             "shi.mi",
             "-shi.meru"
         ],
@@ -51400,7 +51400,7 @@
             "hei"
         ],
         "readings_kun_romaji": [
-            "to.じru",
+            "to.jiru",
             "to.zasu",
             "shi.meru",
             "shi.maru",
@@ -51592,13 +51592,13 @@
             "kin"
         ],
         "readings_kun_romaji": [
-            "suじ"
+            "suji"
         ],
         "wk_readings_on_romaji": [
             "kin"
         ],
         "wk_readings_kun_romaji": [
-            "!suじ"
+            "!suji"
         ]
     },
     "垂": {
@@ -51741,9 +51741,9 @@
             "son"
         ],
         "readings_kun_romaji": [
-            "taっto.i",
+            "tatto.i",
             "touto.i",
-            "taっto.bu",
+            "tatto.bu",
             "touto.bu"
         ],
         "wk_readings_on_romaji": [
@@ -51751,7 +51751,7 @@
         ],
         "wk_readings_kun_romaji": [
             "!touto",
-            "!taっto"
+            "!tatto"
         ]
     },
     "忠": {
@@ -52387,7 +52387,7 @@
         ],
         "readings_on_romaji": [
             "nou",
-            "naっ",
+            "natsu",
             "na",
             "nan",
             "tou"
@@ -52402,7 +52402,7 @@
         ],
         "wk_readings_kun_romaji": [
             "!osa",
-            "!naっ"
+            "!natsu"
         ]
     },
     "肺": {
@@ -52488,13 +52488,13 @@
         ],
         "readings_kun_romaji": [
             "arawa.su",
-            "ichiじru.shii"
+            "ichijiru.shii"
         ],
         "wk_readings_on_romaji": [
             "cho"
         ],
         "wk_readings_kun_romaji": [
-            "!ichiじru",
+            "!ichijiru",
             "!arawa"
         ]
     },
@@ -52922,9 +52922,9 @@
             "ki"
         ],
         "readings_kun_romaji": [
-            "taっto.i",
+            "tatto.i",
             "touto.i",
-            "taっto.bu",
+            "tatto.bu",
             "touto.bu"
         ],
         "wk_readings_on_romaji": [
@@ -53131,7 +53131,7 @@
         ],
         "readings_kun_romaji": [
             "yatsu",
-            "yaっko"
+            "yakko"
         ],
         "wk_readings_on_romaji": [
             "do"
@@ -53279,7 +53279,7 @@
         ],
         "wk_readings_kun_romaji": [
             "!chiji",
-            "!chiじ"
+            "!chiji"
         ]
     },
     "純": {
@@ -53455,7 +53455,7 @@
             "shou"
         ],
         "readings_kun_romaji": [
-            "hiじri"
+            "hijiri"
         ],
         "wk_readings_on_romaji": [
             "sei"
@@ -53491,11 +53491,11 @@
             "Poop"
         ],
         "readings_on_romaji": [
-            "じ"
+            "ji"
         ],
         "readings_kun_romaji": [],
         "wk_readings_on_romaji": [
-            "じ"
+            "ji"
         ],
         "wk_readings_kun_romaji": []
     },
@@ -54251,7 +54251,7 @@
         ],
         "readings_on_romaji": [
             "tou",
-            "ず"
+            "zu"
         ],
         "readings_kun_romaji": [
             "mame",
@@ -55129,17 +55129,17 @@
             "chi"
         ],
         "readings_kun_romaji": [
-            "ha.じru",
-            "haじ",
-            "ha.じrau",
-            "ha.ずkashii"
+            "ha.jiru",
+            "haji",
+            "ha.jirau",
+            "ha.zukashii"
         ],
         "wk_readings_on_romaji": [
             "!chi"
         ],
         "wk_readings_kun_romaji": [
             "ha",
-            "haじ"
+            "haji"
         ]
     },
     "杉": {
@@ -55636,13 +55636,13 @@
             "ko"
         ],
         "readings_kun_romaji": [
-            "miずumi"
+            "mizuumi"
         ],
         "wk_readings_on_romaji": [
             "ko"
         ],
         "wk_readings_kun_romaji": [
-            "!miずumi"
+            "!mizuumi"
         ]
     },
     "銅": {
@@ -55991,7 +55991,7 @@
             "hata",
             "masa",
             "hikii.ru",
-            "moっte"
+            "motte"
         ],
         "wk_readings_on_romaji": [
             "shou"
@@ -57717,15 +57717,15 @@
             "hou"
         ],
         "readings_kun_romaji": [
-            "kuず.reru",
-            "-kuず.re",
-            "kuず.su"
+            "kuzu.reru",
+            "-kuzu.re",
+            "kuzu.su"
         ],
         "wk_readings_on_romaji": [
             "hou"
         ],
         "wk_readings_kun_romaji": [
-            "!kuず"
+            "!kuzu"
         ]
     },
     "患": {
@@ -57764,13 +57764,13 @@
             "kan"
         ],
         "readings_kun_romaji": [
-            "waずra.u"
+            "wazura.u"
         ],
         "wk_readings_on_romaji": [
             "kan"
         ],
         "wk_readings_kun_romaji": [
-            "!waずra"
+            "!wazura"
         ]
     },
     "戻": {
@@ -58082,19 +58082,19 @@
         "readings_kun_romaji": [
             "hi.ku",
             "-hi.ki",
-            "haず.mu",
+            "hazu.mu",
             "tama",
-            "haじ.ku",
-            "haじ.keru",
+            "haji.ku",
+            "haji.keru",
             "tada.su",
-            "haじ.kiyumi"
+            "haji.kiyumi"
         ],
         "wk_readings_on_romaji": [
             "dan"
         ],
         "wk_readings_kun_romaji": [
             "!hi",
-            "!haず",
+            "!hazu",
             "!tama"
         ]
     },
@@ -58330,11 +58330,11 @@
             "Car"
         ],
         "readings_on_romaji": [
-            "じn"
+            "jin"
         ],
         "readings_kun_romaji": [],
         "wk_readings_on_romaji": [
-            "じn"
+            "jin"
         ],
         "wk_readings_kun_romaji": []
     },
@@ -58528,7 +58528,7 @@
             "saku"
         ],
         "readings_kun_romaji": [
-            "keず.ru",
+            "kezu.ru",
             "hatsu.ru",
             "so.gu"
         ],
@@ -58536,7 +58536,7 @@
             "saku"
         ],
         "wk_readings_kun_romaji": [
-            "!keず"
+            "!kezu"
         ]
     },
     "契": {
@@ -59084,7 +59084,7 @@
         ],
         "readings_on_romaji": [
             "nin",
-            "じn"
+            "jin"
         ],
         "readings_kun_romaji": [
             "hara.mu",
@@ -59449,7 +59449,7 @@
             "kyaku"
         ],
         "readings_kun_romaji": [
-            "kae.っte",
+            "kae.tte",
             "shirizo.ku",
             "shirizo.keru"
         ],
@@ -59457,7 +59457,7 @@
             "kyaku"
         ],
         "wk_readings_kun_romaji": [
-            "!kaeっte"
+            "!kaette"
         ]
     },
     "奥": {
@@ -60438,13 +60438,13 @@
             "rin"
         ],
         "readings_kun_romaji": [
-            "suず"
+            "suzu"
         ],
         "wk_readings_on_romaji": [
             "rin"
         ],
         "wk_readings_kun_romaji": [
-            "!suず"
+            "!suzu"
         ]
     },
     "阜": {
@@ -61162,8 +61162,8 @@
             "u.meru",
             "u.maru",
             "u.moreru",
-            "uず.meru",
-            "uず.maru",
+            "uzu.meru",
+            "uzu.maru",
             "i.keru"
         ],
         "wk_readings_on_romaji": [
@@ -61665,13 +61665,13 @@
             "jou"
         ],
         "readings_kun_romaji": [
-            "yuず.ru"
+            "yuzu.ru"
         ],
         "wk_readings_on_romaji": [
             "jou"
         ],
         "wk_readings_kun_romaji": [
-            "!yuず"
+            "!yuzu"
         ]
     },
     "謙": {
@@ -61834,7 +61834,7 @@
             "kou"
         ],
         "readings_kun_romaji": [
-            "unaじ"
+            "unaji"
         ],
         "wk_readings_on_romaji": [
             "kou"
@@ -62260,7 +62260,7 @@
         ],
         "readings_kun_romaji": [
             "karu",
-            "keず.ru"
+            "kezu.ru"
         ],
         "wk_readings_on_romaji": [
             "zai"
@@ -62524,14 +62524,14 @@
             "kei"
         ],
         "readings_kun_romaji": [
-            "taずsa.eru",
-            "taずsa.waru"
+            "tazusa.eru",
+            "tazusa.waru"
         ],
         "wk_readings_on_romaji": [
             "kei"
         ],
         "wk_readings_kun_romaji": [
-            "!taずsa"
+            "!tazusa"
         ]
     },
     "敏": {
@@ -63390,7 +63390,7 @@
         "readings_kun_romaji": [
             "shitaga.u",
             "herikuda.ru",
-            "yuず.ru"
+            "yuzu.ru"
         ],
         "wk_readings_on_romaji": [
             "son"
@@ -64408,13 +64408,13 @@
             "Two"
         ],
         "readings_on_romaji": [
-            "じn",
+            "jin",
             "ni",
             "nin"
         ],
         "readings_kun_romaji": [],
         "wk_readings_on_romaji": [
-            "じn"
+            "jin"
         ],
         "wk_readings_kun_romaji": []
     },
@@ -65563,11 +65563,11 @@
             "Reason"
         ],
         "readings_on_romaji": [
-            "じku"
+            "jiku"
         ],
         "readings_kun_romaji": [],
         "wk_readings_on_romaji": [
-            "じku"
+            "jiku"
         ],
         "wk_readings_kun_romaji": []
     },
@@ -66319,14 +66319,14 @@
             "chin"
         ],
         "readings_kun_romaji": [
-            "meずra.shii",
+            "mezura.shii",
             "takara"
         ],
         "wk_readings_on_romaji": [
             "chin"
         ],
         "wk_readings_kun_romaji": [
-            "!meずra"
+            "!mezura"
         ]
     },
     "裂": {
@@ -66740,8 +66740,8 @@
         ],
         "readings_kun_romaji": [
             "su.ru",
-            "-ず.ri",
-            "-ずri",
+            "-zu.ri",
+            "-zuri",
             "ha.ku"
         ],
         "wk_readings_on_romaji": [
@@ -67363,7 +67363,7 @@
         "readings_kun_romaji": [
             "su.ru",
             "su.reru",
-            "-ず.re",
+            "-zu.re",
             "kosu.ru",
             "kosu.reru"
         ],
@@ -67611,17 +67611,17 @@
         ],
         "readings_on_romaji": [
             "chin",
-            "じn"
+            "jin"
         ],
         "readings_kun_romaji": [
-            "shiず.mu",
-            "shiず.meru"
+            "shizu.mu",
+            "shizu.meru"
         ],
         "wk_readings_on_romaji": [
             "chin"
         ],
         "wk_readings_kun_romaji": [
-            "!shiず"
+            "!shizu"
         ]
     },
     "沼": {
@@ -67796,12 +67796,12 @@
             "Poop"
         ],
         "readings_on_romaji": [
-            "じ",
+            "ji",
             "shi"
         ],
         "readings_kun_romaji": [],
         "wk_readings_on_romaji": [
-            "じ"
+            "ji"
         ],
         "wk_readings_kun_romaji": []
     },
@@ -68165,7 +68165,7 @@
             "Blade"
         ],
         "readings_on_romaji": [
-            "じn",
+            "jin",
             "nin"
         ],
         "readings_kun_romaji": [
@@ -68174,7 +68174,7 @@
             "ki.ru"
         ],
         "wk_readings_on_romaji": [
-            "!じn",
+            "!jin",
             "!nin"
         ],
         "wk_readings_kun_romaji": [
@@ -68403,7 +68403,7 @@
             "Temple"
         ],
         "readings_on_romaji": [
-            "じ",
+            "ji",
             "shi"
         ],
         "readings_kun_romaji": [
@@ -69249,7 +69249,7 @@
         ],
         "readings_kun_romaji": [
             "kaminari",
-            "ikaずchi",
+            "ikazuchi",
             "ikazuchi"
         ],
         "wk_readings_on_romaji": [
@@ -69991,12 +69991,12 @@
             "ju",
             "shu",
             "shuu",
-            "ず"
+            "zu"
         ],
         "readings_kun_romaji": [
-            "maじna.u",
+            "majina.u",
             "noro.i",
-            "maじna.i",
+            "majina.i",
             "noro.u"
         ],
         "wk_readings_on_romaji": [
@@ -71562,9 +71562,9 @@
             "ryou"
         ],
         "readings_kun_romaji": [
-            "suず.shii",
-            "suず.mu",
-            "suず.yaka",
+            "suzu.shii",
+            "suzu.mu",
+            "suzu.yaka",
             "usu.i",
             "hiya.su",
             "makotoni"
@@ -71573,7 +71573,7 @@
             "ryou"
         ],
         "wk_readings_kun_romaji": [
-            "!suず"
+            "!suzu"
         ]
     },
     "猿": {
@@ -72198,7 +72198,7 @@
         ],
         "readings_kun_romaji": [
             "matata.ku",
-            "maじro.gu"
+            "majiro.gu"
         ],
         "wk_readings_on_romaji": [
             "shun"
@@ -73409,7 +73409,7 @@
             "mou"
         ],
         "readings_kun_romaji": [
-            "ずkin",
+            "zukin",
             "oo.u"
         ],
         "wk_readings_on_romaji": [
@@ -73828,7 +73828,7 @@
             "teki"
         ],
         "readings_kun_romaji": [
-            "shiずku",
+            "shizuku",
             "shitata.ru"
         ],
         "wk_readings_on_romaji": [
@@ -73836,7 +73836,7 @@
         ],
         "wk_readings_kun_romaji": [
             "!shitata",
-            "!shiずku"
+            "!shizuku"
         ]
     },
     "炊": {
@@ -74173,13 +74173,13 @@
             "kou"
         ],
         "readings_kun_romaji": [
-            "niじ"
+            "niji"
         ],
         "wk_readings_on_romaji": [
             "!kou"
         ],
         "wk_readings_kun_romaji": [
-            "niじ"
+            "niji"
         ]
     },
     "巾": {
@@ -74448,13 +74448,13 @@
             "joku"
         ],
         "readings_kun_romaji": [
-            "haずkashi.meru"
+            "hazukashi.meru"
         ],
         "wk_readings_on_romaji": [
             "joku"
         ],
         "wk_readings_kun_romaji": [
-            "!haずkashi"
+            "!hazukashi"
         ]
     },
     "鉢": {
@@ -74792,11 +74792,11 @@
             "Cross"
         ],
         "readings_on_romaji": [
-            "じn"
+            "jin"
         ],
         "readings_kun_romaji": [],
         "wk_readings_on_romaji": [
-            "じn"
+            "jin"
         ],
         "wk_readings_kun_romaji": []
     },
@@ -74929,7 +74929,7 @@
             "Ice"
         ],
         "readings_on_romaji": [
-            "じn",
+            "jin",
             "san"
         ],
         "readings_kun_romaji": [
@@ -74938,7 +74938,7 @@
             "-zu.kushi",
             "-tsu.ku",
             "-zu.ku",
-            "-ず.ku",
+            "-zu.ku",
             "tsu.kiru",
             "tsu.kasu",
             "sakazuki",
@@ -74947,7 +74947,7 @@
             "tsuki"
         ],
         "wk_readings_on_romaji": [
-            "じn"
+            "jin"
         ],
         "wk_readings_kun_romaji": [
             "!tsu"
@@ -76253,13 +76253,13 @@
             "so"
         ],
         "readings_kun_romaji": [
-            "ishiずe"
+            "ishizue"
         ],
         "wk_readings_on_romaji": [
             "so"
         ],
         "wk_readings_kun_romaji": [
-            "!ishiずe"
+            "!ishizue"
         ]
     },
     "鶴": {
@@ -77665,7 +77665,7 @@
             "utsu"
         ],
         "readings_kun_romaji": [
-            "uっ.suru",
+            "utsu.suru",
             "fusa.gu",
             "shige.ru"
         ],
@@ -78403,8 +78403,8 @@
         "readings_kun_romaji": [
             "ao.gu",
             "oo.se",
-            "o.っsharu",
-            "oっsha.ru"
+            "o.ssharu",
+            "ossha.ru"
         ],
         "wk_readings_on_romaji": [
             "gyou",
@@ -79383,13 +79383,13 @@
             "kou"
         ],
         "readings_kun_romaji": [
-            "gaenじ.ru"
+            "gaenji.ru"
         ],
         "wk_readings_on_romaji": [
             "kou"
         ],
         "wk_readings_kun_romaji": [
-            "!gaenじ"
+            "!gaenji"
         ]
     },
     "脂": {
@@ -80145,13 +80145,13 @@
             "ka"
         ],
         "readings_kun_romaji": [
-            "uず"
+            "uzu"
         ],
         "wk_readings_on_romaji": [
             "ka"
         ],
         "wk_readings_kun_romaji": [
-            "!uず"
+            "!uzu"
         ]
     },
     "慈": {
@@ -80186,13 +80186,13 @@
             "Heart"
         ],
         "readings_on_romaji": [
-            "じ"
+            "ji"
         ],
         "readings_kun_romaji": [
             "itsuku.shimu"
         ],
         "wk_readings_on_romaji": [
-            "じ"
+            "ji"
         ],
         "wk_readings_kun_romaji": [
             "!itsuku"
@@ -80715,7 +80715,7 @@
         ],
         "readings_on_romaji": [
             "shi",
-            "じ"
+            "ji"
         ],
         "readings_kun_romaji": [
             "ibara",
@@ -80724,7 +80724,7 @@
         ],
         "wk_readings_on_romaji": [
             "!shi",
-            "!じ"
+            "!ji"
         ],
         "wk_readings_kun_romaji": [
             "ibara"
@@ -81680,7 +81680,7 @@
         ],
         "readings_kun_romaji": [
             "obo.reru",
-            "shiず.mu",
+            "shizu.mu",
             "nai"
         ],
         "wk_readings_on_romaji": [
@@ -81689,7 +81689,7 @@
         ],
         "wk_readings_kun_romaji": [
             "!obo",
-            "!shiず",
+            "!shizu",
             "!nai"
         ]
     },
@@ -81929,14 +81929,14 @@
         "readings_kun_romaji": [
             "no",
             "sunawa.chi",
-            "nanじ"
+            "nanji"
         ],
         "wk_readings_on_romaji": [
             "nai"
         ],
         "wk_readings_kun_romaji": [
             "!sunawa",
-            "!nanじ",
+            "!nanji",
             "!no"
         ]
     },
@@ -82023,14 +82023,14 @@
             "sou"
         ],
         "readings_kun_romaji": [
-            "saっ.to"
+            "satsu.to"
         ],
         "wk_readings_on_romaji": [
             "satsu",
             "sou"
         ],
         "wk_readings_kun_romaji": [
-            "!saっ"
+            "!satsu"
         ]
     },
     "隼": {
@@ -82311,14 +82311,14 @@
             "Scooter"
         ],
         "readings_on_romaji": [
-            "ずi"
+            "zui"
         ],
         "readings_kun_romaji": [
             "manima.ni",
             "shitaga.u"
         ],
         "wk_readings_on_romaji": [
-            "ずi"
+            "zui"
         ],
         "wk_readings_kun_romaji": [
             "!shitaga",
@@ -82935,7 +82935,7 @@
             "zan"
         ],
         "readings_kun_romaji": [
-            "miじ.me",
+            "miji.me",
             "ita.mu",
             "mugo.i"
         ],
@@ -82944,7 +82944,7 @@
             "zan"
         ],
         "wk_readings_kun_romaji": [
-            "!miじ",
+            "!miji",
             "!ita",
             "!mugo"
         ]
@@ -83767,13 +83767,13 @@
             "gei"
         ],
         "readings_kun_romaji": [
-            "kuじra"
+            "kujira"
         ],
         "wk_readings_on_romaji": [
             "gei"
         ],
         "wk_readings_kun_romaji": [
-            "!kuじra"
+            "!kujira"
         ]
     },
     "荘": {
@@ -84832,7 +84832,7 @@
             "jo"
         ],
         "readings_kun_romaji": [
-            "tsui.ず",
+            "tsui.zu",
             "tsuide"
         ],
         "wk_readings_on_romaji": [
@@ -85274,7 +85274,7 @@
             "kou"
         ],
         "readings_kun_romaji": [
-            "anず"
+            "anzu"
         ],
         "wk_readings_on_romaji": [
             "!an",
@@ -85282,7 +85282,7 @@
             "!kou"
         ],
         "wk_readings_kun_romaji": [
-            "anず"
+            "anzu"
         ]
     },
     "茜": {
@@ -85458,8 +85458,8 @@
             "chin"
         ],
         "readings_kun_romaji": [
-            "shiず.meru",
-            "shiず.maru",
+            "shizu.meru",
+            "shizu.maru",
             "osae"
         ],
         "wk_readings_on_romaji": [
@@ -85467,7 +85467,7 @@
         ],
         "wk_readings_kun_romaji": [
             "!osae",
-            "!shiず"
+            "!shizu"
         ]
     },
     "奉": {
@@ -85515,7 +85515,7 @@
         "readings_kun_romaji": [
             "tatematsu.ru",
             "matsu.ru",
-            "hou.ずru"
+            "hou.zuru"
         ],
         "wk_readings_on_romaji": [
             "hou",
@@ -85919,11 +85919,11 @@
             "Scooter"
         ],
         "readings_on_romaji": [
-            "ずi"
+            "zui"
         ],
         "readings_kun_romaji": [],
         "wk_readings_on_romaji": [
-            "ずi"
+            "zui"
         ],
         "wk_readings_kun_romaji": []
     },
@@ -88110,7 +88110,7 @@
             "jou"
         ],
         "readings_kun_romaji": [
-            "yasu.nじru"
+            "yasu.njiru"
         ],
         "wk_readings_on_romaji": [
             "!jou",
@@ -89492,7 +89492,7 @@
         "readings_kun_romaji": [
             "a.ete",
             "a.enai",
-            "a.eず"
+            "a.ezu"
         ],
         "wk_readings_on_romaji": [
             "kan"
@@ -89690,15 +89690,15 @@
         ],
         "readings_kun_romaji": [
             "o.chiru",
-            "kuず.su",
-            "kuず.reru"
+            "kuzu.su",
+            "kuzu.reru"
         ],
         "wk_readings_on_romaji": [
             "da"
         ],
         "wk_readings_kun_romaji": [
             "!o",
-            "!kuず"
+            "!kuzu"
         ]
     },
     "遮": {
@@ -89784,7 +89784,7 @@
         ],
         "readings_kun_romaji": [
             "karasu",
-            "iずkunzo",
+            "izukunzo",
             "nanzo"
         ],
         "wk_readings_on_romaji": [
@@ -91502,19 +91502,19 @@
             "Rake"
         ],
         "readings_on_romaji": [
-            "ずi",
+            "zui",
             "sui"
         ],
         "readings_kun_romaji": [
-            "miず-",
+            "mizu-",
             "shirushi"
         ],
         "wk_readings_on_romaji": [
             "!sui",
-            "!ずi"
+            "!zui"
         ],
         "wk_readings_kun_romaji": [
-            "miず",
+            "mizu",
             "shirushi"
         ]
     },
@@ -92096,14 +92096,14 @@
             "Crab Trap"
         ],
         "readings_on_romaji": [
-            "じn"
+            "jin"
         ],
         "readings_kun_romaji": [
             "hanaha.da",
             "hanaha.dashii"
         ],
         "wk_readings_on_romaji": [
-            "じn"
+            "jin"
         ],
         "wk_readings_kun_romaji": [
             "!hanaha"
@@ -92492,7 +92492,7 @@
             "moku"
         ],
         "readings_kun_romaji": [
-            "mutsu.maじi",
+            "mutsu.majii",
             "mutsu.mu",
             "mutsu.bu"
         ],
@@ -92728,13 +92728,13 @@
         ],
         "readings_kun_romaji": [
             "anado.ru",
-            "anaず.ru"
+            "anazu.ru"
         ],
         "wk_readings_on_romaji": [
             "bu"
         ],
         "wk_readings_kun_romaji": [
-            "!anaず",
+            "!anazu",
             "!anado"
         ]
     },
@@ -93251,13 +93251,13 @@
             "shi"
         ],
         "readings_kun_romaji": [
-            "aずsa"
+            "azusa"
         ],
         "wk_readings_on_romaji": [
             "!shi"
         ],
         "wk_readings_kun_romaji": [
-            "aずsa"
+            "azusa"
         ]
     },
     "沙": {
@@ -94059,8 +94059,8 @@
             "bon"
         ],
         "readings_kun_romaji": [
-            "waずra.u",
-            "waずra.wasu",
+            "wazura.u",
+            "wazura.wasu",
             "urusa.garu",
             "urusa.i"
         ],
@@ -94070,7 +94070,7 @@
         ],
         "wk_readings_kun_romaji": [
             "!urusa",
-            "!waずra"
+            "!wazura"
         ]
     },
     "劾": {
