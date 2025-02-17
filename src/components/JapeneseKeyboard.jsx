@@ -11,10 +11,21 @@ const HIRAGANA = [
     { char: "や", romaji: "ya" }, { char: "ゆ", romaji: "yu" }, { char: "よ", romaji: "yo" },
     { char: "ら", romaji: "ra" }, { char: "り", romaji: "ri" }, { char: "る", romaji: "ru" }, { char: "れ", romaji: "re" }, { char: "ろ", romaji: "ro" },
     { char: "わ", romaji: "wa" }, { char: "を", romaji: "wo" }, { char: "ん", romaji: "n" },
-    {char: "-", romaji: "-"}, {char:".", romaji: ","},
+    { char: "が", romaji: "ga" }, { char: "ぎ", romaji: "gi" }, { char: "ぐ", romaji: "gu" }, { char: "げ", romaji: "ge" }, { char: "ご", romaji: "go" },
+    { char: "ざ", romaji: "za" }, { char: "じ", romaji: "ji" }, { char: "ず", romaji: "zu" }, { char: "ぜ", romaji: "ze" }, { char: "ぞ", romaji: "zo" },
+    { char: "だ", romaji: "da" }, { char: "ぢ", romaji: "ji" }, { char: "づ", romaji: "zu" }, { char: "で", romaji: "de" }, { char: "ど", romaji: "do" },
+    { char: "ば", romaji: "ba" }, { char: "び", romaji: "bi" }, { char: "ぶ", romaji: "bu" }, { char: "べ", romaji: "be" }, { char: "ぼ", romaji: "bo" },
+    { char: "ぱ", romaji: "pa" }, { char: "ぴ", romaji: "pi" }, { char: "ぷ", romaji: "pu" }, { char: "ぺ", romaji: "pe" }, { char: "ぽ", romaji: "po" },
+    { char: "ゃ", romaji: "ya" }, { char: "ゅ", romaji: "yu" }, { char: "ょ", romaji: "yo" },
+    { char: "っ", romaji: "tsu" }, { char: "-", romaji: "-" }, { char: ".", romaji: "." },
 ];
 
-const KATAKANA = HIRAGANA.map(c => ({ char: String.fromCharCode(c.char.charCodeAt(0) + 96), romaji: c.romaji }));
+const KATAKANA = HIRAGANA.map(c => {
+    if (c.char === '-' || c.char === '.') {
+        return c;
+    }
+    return { char: String.fromCharCode(c.char.charCodeAt(0) + 96), romaji: c.romaji };
+});
 
 const colors = {
     background: "#0A041A", // Dark purple background

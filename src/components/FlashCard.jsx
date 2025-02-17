@@ -379,7 +379,7 @@ export default function KanjiFlashcard() {
           }}
           onClick={() => {
             const furigana =  checkFurinagaRef.current.value;
-            const isFuriganaCorrect = data.readings_on_romaji?.includes(furigana) || data.readings_kun_romaji?.includes(furigana);
+            const isFuriganaCorrect = data.readings_on_romaji?.map(r => r.toLowerCase()).includes(furigana.toLowerCase()) || data.readings_kun_romaji?.map(r => r.toLowerCase()).includes(furigana.toLowerCase());
             showToast(isFuriganaCorrect ? "Correct Furigana" : "Incorrect Furigana", isFuriganaCorrect ? "#00ff88" : "#ff4444");
           }}
         >
