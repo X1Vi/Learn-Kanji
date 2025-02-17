@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import JapaneseKeyboard from "./JapeneseKeyboard";
 
 export default function KanjiFlashcard() {
   const [kanjiData, setKanjiData] = useState(null);
@@ -16,7 +17,7 @@ export default function KanjiFlashcard() {
   const [showFailedOnly, setShowFailedOnly] = useState(false);
   const checkFurinagaRef = useRef(null);
   const [showReadings, setShowReadings] = useState(false);
-
+  const [showKeyboard , setShowKeyboard] = useState(false);
   useEffect(() => {
     if(showFailedOnly) {
       localStorage.setItem("lastNonFailedKanjiIndex", currentIndex);
@@ -577,6 +578,73 @@ export default function KanjiFlashcard() {
          
         </div>
       </div>
+      <button
+        style={{
+          padding: "14px 24px",
+          background: colors.buttonHint,
+          color: "white",
+          borderRadius: "8px",
+          marginTop: "16px",
+          transition: "background 0.3s, transform 0.2s",
+          width: "100%",
+          maxWidth: "400px",
+          fontSize: "clamp(14px, 4vw, 16px)",
+          fontWeight: "bold",
+          cursor: "pointer",
+          border: `1px solid ${colors.border}`,
+          boxShadow: `0 0 8px ${colors.glow}`,
+          ":hover": {
+            transform: "scale(1.05)",
+          },
+        }}
+        onClick={() => setShowKeyboard(true)}
+      >
+        Show Japanese Keyboard
+      </button>
+      {showKeyboard && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.2)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: 1000,
+          }}
+        >
+          <div
+            style={{
+              position: "absolute",
+              bottom:0,
+              background: colors.card,
+              padding: "20px",
+              borderRadius: "8px",
+              boxShadow: `0 0 8px ${colors.glow}`,
+            }}
+          >
+            <button
+              style={{
+                position: "absolute",
+                top: "10px",
+                right: "10px",
+                background: "transparent",
+                border: "none",
+                color: colors.textPrimary,
+                fontSize: "24px",
+                cursor: "pointer",
+              }}
+              onClick={() => setShowKeyboard(false)}
+            >
+              &times;
+            </button>
+            <JapaneseKeyboard hints={[...(data?.readings_on ?? []), ...(data?.readings_kun ?? [])]} />
+            </div>
+        </div>
+      )}
     </div>
   );
 }
