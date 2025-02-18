@@ -306,7 +306,6 @@ const KanjiList = ({ kanjiData = {} }) => {
     if (gridRef.current) {
       const msnry = new Masonry(gridRef.current, {
         itemSelector: ".masonry-item",
-        columnWidth: 200,
         gutter: 32,
         resize: true,
         fitWidth: true,
@@ -329,7 +328,7 @@ const KanjiList = ({ kanjiData = {} }) => {
   }, [paginatedKanji]);
 
   return (
-    <div style={{ textAlign: "center", padding: "16px", backgroundColor: colors.background }}>
+    <div style={{ textAlign: "center", paddingTop: "16px", paddingBottom:"16px",  backgroundColor: colors.background }}>
       <div style={{ marginBottom: "16px" }}>
         <input
           type="text"
@@ -372,9 +371,13 @@ const KanjiList = ({ kanjiData = {} }) => {
       <div
         ref={gridRef}
         style={{
-          padding: "16px",
+          padding: "0px",
+          justifyContent:'center',
+          alignItems:'center',
+          alignSelf:'center',
+          justifySelf:'center',
           boxSizing: "border-box",
-          margin: "20px",
+          margin: "0px",
         }}
       >
         {paginatedKanji.map(([kanji, data]) => (
@@ -382,7 +385,7 @@ const KanjiList = ({ kanjiData = {} }) => {
             key={kanji}
             className="masonry-item"
             style={{
-              width: "200px", // Increased width for masonry items
+              width: window.innerWidth < 425 ? "300px" : "300px", // Adjust width based on screen size
               marginBottom: "16px", // Spacing between items
             }}
           >
