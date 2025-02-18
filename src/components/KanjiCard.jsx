@@ -178,6 +178,7 @@ const MatchingGame = ({ kanji, data, showKanji, kanjiArray, revealAnswers=[], se
               onClick={() => setSelectedJapanese(japanese)}
               disabled={matchedPairs.some((pair) => pair.selectedJapanese === japanese)}
               style={{
+                cursor:'pointer',
                 margin: "4px",
                 padding: "8px",
                 width: "100%",
@@ -196,6 +197,7 @@ const MatchingGame = ({ kanji, data, showKanji, kanjiArray, revealAnswers=[], se
               onClick={() => setSelectedJapanese(japanese)}
               disabled={matchedPairs.some((pair) => pair.selectedJapanese === japanese)}
               style={{
+                cursor:"pointer",
                 margin: "4px",
                 padding: "8px",
                 width: "100%",
@@ -214,6 +216,7 @@ const MatchingGame = ({ kanji, data, showKanji, kanjiArray, revealAnswers=[], se
               onClick={() => setSelectedRomaji(romaji)}
               disabled={matchedPairs.some((pair) => pair.selectedRomaji === romaji)}
               style={{
+                cursor:'pointer',
                 margin: "4px",
                 padding: "8px",
                 width: "100%",
@@ -230,6 +233,7 @@ const MatchingGame = ({ kanji, data, showKanji, kanjiArray, revealAnswers=[], se
               onClick={() => setSelectedRomaji(romaji)}
               disabled={matchedPairs.some((pair) => pair.selectedRomaji === romaji)}
               style={{
+                cursor:"pointer",
                 margin: "4px",
                 padding: "8px",
                 width: "100%",
@@ -245,6 +249,7 @@ const MatchingGame = ({ kanji, data, showKanji, kanjiArray, revealAnswers=[], se
       <button
         onClick={handleMatch}
         style={{
+          cursor:'pointer',
           marginTop: "16px",
           padding: "8px 16px",
           backgroundColor: colors.button,
