@@ -26,7 +26,7 @@ const Card = ({ children }) => (
   </div>
 );
 
-const MatchingGame = ({ kanji, data, showKanji, kanjiArray }) => {
+const MatchingGame = ({ kanji, data, showKanji, kanjiArray, revealAnswers=[], setAllRevealAnswers=null }) => {
   const [selectedJapanese, setSelectedJapanese] = useState(null);
   const [selectedRomaji, setSelectedRomaji] = useState(null);
   const [matchedPairs, setMatchedPairs] = useState([]);
@@ -88,6 +88,10 @@ const MatchingGame = ({ kanji, data, showKanji, kanjiArray }) => {
   useEffect(() => {
     setLocalShowKanji(showKanji);
   }, [showKanji]);
+
+  useEffect(()=>{
+    setAllRevealAnswers(prev => [...prev, {revealAnswer, kanji}])
+  },[revealAnswer])
 
   return (
     <Card>
@@ -270,6 +274,7 @@ const KanjiList = ({ kanjiData = {} }) => {
   const startIndex = page * itemsPerPage;
   const endIndex = startIndex + itemsPerPage;
   const paginatedKanji = filteredKanji.slice(startIndex, endIndex);
+  const [allRevealAnswers, setAllRevealAnswers] = useState([]);
 
   const handleSearch = (searchQuery) => {
     const query = searchQuery.toLowerCase();
@@ -325,7 +330,7 @@ const KanjiList = ({ kanjiData = {} }) => {
         msnry.destroy();
       };
     }
-  }, [paginatedKanji]);
+  }, [paginatedKanji, allRevealAnswers]);
 
   return (
     <div style={{ textAlign: "center", paddingTop: "16px", paddingBottom:"16px",  backgroundColor: colors.background }}>
@@ -390,6 +395,8 @@ const KanjiList = ({ kanjiData = {} }) => {
             }}
           >
             <MatchingGame
+              revealAnswers={allRevealAnswers}
+              setAllRevealAnswers={setAllRevealAnswers}
               kanjiArray={kanjiArray}
               kanji={kanji}
               data={data}
