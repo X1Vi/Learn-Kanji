@@ -329,11 +329,7 @@ const KanjiList = ({ kanjiData = {} }) => {
       setTimeout(() => {
         msnry.layout();
       }, 100);
-
-      // Cleanup function to destroy Masonry instance
-      return () => {
-        msnry.destroy();
-      };
+      
     }
   }, [paginatedKanji, allRevealAnswers]);
 
