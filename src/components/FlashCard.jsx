@@ -16,19 +16,28 @@ export default function KanjiFlashcard() {
   });
   const [showFailedOnly, setShowFailedOnly] = useState(false);
   const checkFurinagaRef = useRef(null);
-  const [showReadings, setShowReadings] = useState(false);
-  const [showKeyboard , setShowKeyboard] = useState(false);
+  const [showKeyboard, setShowKeyboard] = useState(false);
+  const [toggleAnswer, setToggleAnswer] = useState(localStorage.getItem("toggleAnswer") === "true");
+  const [showReadings, setShowReadings] = useState(localStorage.getItem("showReadings") === "true");
+
+  useEffect(()=>{
+    localStorage.setItem("toggleAnswer", toggleAnswer.toString());
+  },[toggleAnswer])
+
+  useEffect(()=>{
+    localStorage.setItem("showReadings", showReadings.toString());
+  },[showReadings])
   useEffect(() => {
-    if(showFailedOnly) {
+    if (showFailedOnly) {
       localStorage.setItem("lastNonFailedKanjiIndex", currentIndex);
       setCurrentIndex(0);
-    }else if(!showFailedOnly){
-      if(localStorage.getItem("lastNonFailedKanjiIndex") !== null){
+    } else if (!showFailedOnly) {
+      if (localStorage.getItem("lastNonFailedKanjiIndex") !== null) {
         setCurrentIndex(parseInt(localStorage.getItem("lastNonFailedKanjiIndex")));
       }
     }
 
-  },[showFailedOnly]);
+  }, [showFailedOnly]);
 
   useEffect(() => {
     fetch("kanji_data_with_romaji_new_test.json")
@@ -92,11 +101,11 @@ export default function KanjiFlashcard() {
       setCurrentIndex(0);
       return;
     }
-  
+
     if (kanjiData[currentIndex] === kanjiData[0]) {
       return;
     }
-  
+
     setShowAnswer(false);
     setShowHint(false);
     setCurrentIndex((prevIndex) => {
@@ -119,11 +128,38 @@ export default function KanjiFlashcard() {
     setFailedKanji([]);
   }
 
+  const checkFurinaga = (showToastBool = false) => {
+    const furigana = checkFurinagaRef.current.value;
+    const isFuriganaCorrect = data.readings_on_romaji?.map(r => r.toLowerCase()).includes(furigana.toLowerCase()) || data.readings_kun_romaji?.map(r => r.toLowerCase()).includes(furigana.toLowerCase());
+    if (showToastBool) {
+      showToast(isFuriganaCorrect ? "Correct Furigana" : "Incorrect Furigana", isFuriganaCorrect ? "#00ff88" : "#ff4444");
+    }
+    return isFuriganaCorrect;
+  }
+  const handleKeyPressFurigana = (e) => {
+    if (e.code === "ShiftLeft") {
+      if (!failedKanji.includes(kanji)) { // Avoid adding duplicates
+        setFailedKanji([...failedKanji, kanji]); // Add the current Kanji to the failed list
+        showToast("Marked as Failed", "#ff4444"); // Show a toast notification
+      }
+      setShowAnswer(true);
+    }
+
+    if (e.key === "Enter") {
+      if (checkFurinaga()) {
+        nextKanji();
+        showToast("Correct", "#00ff88");
+      } else {
+        showToast("Incorrect", "#ff4444");
+      }
+    }
+  };
+
   const handleKeyPress = (e) => {
     if (e.code === "ShiftLeft") {
       if (!failedKanji.includes(kanji)) { // Avoid adding duplicates
         setFailedKanji([...failedKanji, kanji]); // Add the current Kanji to the failed list
-      showToast("Marked as Failed", "#ff4444"); // Show a toast notification
+        showToast("Marked as Failed", "#ff4444"); // Show a toast notification
       }
       setShowAnswer(true);
     }
@@ -137,6 +173,7 @@ export default function KanjiFlashcard() {
       }
     }
   };
+
 
   const showToast = (message, backgroundColor) => {
     const toast = document.createElement("div");
@@ -174,7 +211,7 @@ export default function KanjiFlashcard() {
     border: "#6A5ACD", // Purple border
     glow: "rgba(106, 90, 205, 0.5)", // Glow effect
   };
-  
+
   return (
     <div
       style={{
@@ -190,80 +227,86 @@ export default function KanjiFlashcard() {
         fontFamily: "'Poppins', sans-serif",
       }}
     >
-      <input
-        type="text"
-        placeholder="Search by kanji or meaning"
-        value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)}
-        style={{
-          marginBottom: "16px",
-          padding: "12px",
-          borderRadius: "8px",
-          border: `1px solid ${colors.border}`,
-          background: "#1E1A2F",
-          color: "#fff",
-          fontSize: "clamp(14px, 4vw, 16px)",
-          width: "100%",
-          maxWidth: "400px",
-          outline: "none",
-          boxShadow: `0 0 8px ${colors.glow}`,
-        }}
-      />
-      <input
-        type="text"
-        placeholder="Enter number to jump on that kanji (e.g. 0-50)"
-        onBlur={handleRangeChange}
-        style={{
-          marginBottom: "16px",
-          padding: "12px",
-          borderRadius: "8px",
-          border: `1px solid ${colors.border}`,
-          background: "#1E1A2F",
-          color: "#fff",
-          fontSize: "clamp(14px, 4vw, 16px)",
-          width: "100%",
-          maxWidth: "400px",
-          outline: "none",
-          boxShadow: `0 0 8px ${colors.glow}`,
-        }}
-      />
-      <button
-        style={{
-          padding: "14px 24px",
-          background: showFailedOnly ? "#FF4444" : "#00FF88",
-          color: "white",
-          borderRadius: "8px",
-          marginBottom: "16px",
-          transition: "background 0.3s, transform 0.2s",
-          width: "100%",
-          maxWidth: "400px",
-          fontSize: "clamp(14px, 4vw, 16px)",
-          fontWeight: "bold",
-          cursor: "pointer",
-          border: `1px solid ${colors.border}`,
-          boxShadow: `0 0 8px ${colors.glow}`,
-          ":hover": {
-            transform: "scale(1.05)",
-          },
-        }}
-        onClick={() => {
-          setShowFailedOnly(!showFailedOnly);
-          showFailedOnly ? setCurrentIndex(0) : null;
-        }}
-            >
-        {showFailedOnly ? "Show All Kanji" : "Show Failed Kanji Only"}
-            </button>
-            <p
-        style={{
-          fontSize: "clamp(16px, 4vw, 18px)",
-          color: colors.textSecondary,
-          marginBottom: "8px",
-          zIndex: 2,
-        }}
-            >
-        Current: {currentIndex + 1} / {filteredKanji.length}
-            </p>
-            <div
+      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginBottom:"20px" }}>
+        <input
+          type="text"
+          placeholder="Search by kanji or meaning"
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          style={{
+            marginBottom: "16px",
+            padding: "12px",
+            borderRadius: "8px",
+            border: `1px solid ${colors.border}`,
+            background: "#1E1A2F",
+            color: "#fff",
+            fontSize: "clamp(14px, 4vw, 16px)",
+            width: "100%",
+            maxWidth: "400px",
+            outline: "none",
+            boxShadow: `0 0 8px ${colors.glow}`,
+          }}
+        />
+
+
+
+        <input
+          type="text"
+          placeholder="Enter number to jump on that kanji (e.g. 0-50)"
+          onBlur={handleRangeChange}
+          style={{
+            marginBottom: "16px",
+            padding: "12px",
+            borderRadius: "8px",
+            border: `1px solid ${colors.border}`,
+            background: "#1E1A2F",
+            color: "#fff",
+            fontSize: "clamp(14px, 4vw, 16px)",
+            width: "100%",
+            maxWidth: "400px",
+            outline: "none",
+            boxShadow: `0 0 8px ${colors.glow}`,
+          }}
+        />
+        <button
+          style={{
+            padding: "14px 24px",
+            background: showFailedOnly ? "#FF4444" : "#00FF88",
+            color: "white",
+            borderRadius: "8px",
+            marginBottom: "16px",
+            transition: "background 0.3s, transform 0.2s",
+            width: "100%",
+            maxWidth: "400px",
+            fontSize: "clamp(14px, 4vw, 16px)",
+            fontWeight: "bold",
+            cursor: "pointer",
+            border: `1px solid ${colors.border}`,
+            boxShadow: `0 0 8px ${colors.glow}`,
+            ":hover": {
+              transform: "scale(1.05)",
+            },
+          }}
+          onClick={() => {
+            setShowFailedOnly(!showFailedOnly);
+            showFailedOnly ? setCurrentIndex(0) : null;
+          }}
+        >
+          {showFailedOnly ? "Show All Kanji" : "Show Failed Kanji Only"}
+        </button>
+
+        <p
+          style={{
+            fontSize: "clamp(16px, 4vw, 18px)",
+            color: colors.textSecondary,
+            marginBottom: "8px",
+            zIndex: 2,
+          }}
+        >
+          Current: {currentIndex + 1} / {filteredKanji.length}
+        </p>
+      </div>
+      <div
         style={{
           padding: "clamp(16px, 5vw, 32px)",
           width: "100%",
@@ -275,8 +318,10 @@ export default function KanjiFlashcard() {
           boxShadow: `0 6px 15px ${colors.glow}`,
           transition: "all 0.3s ease-in-out",
           transform: showAnswer ? "scale(1.05)" : "scale(1)",
+
+
         }}
-            >
+      >
 
         <button
           style={{
@@ -294,10 +339,34 @@ export default function KanjiFlashcard() {
             ":hover": {
               transform: "scale(1.05)",
             },
+            marginRight: "4px"
           }}
           onClick={() => setShowReadings(!showReadings)}
         >
           {showReadings ? "Hide Readings" : "Show Readings"}
+        </button>
+
+        <button
+          style={{
+            padding: "14px 24px",
+            background: colors.buttonHint,
+            color: "white",
+            borderRadius: "8px",
+            transition: "background 0.3s, transform 0.2s",
+            fontSize: "clamp(14px, 4vw, 16px)",
+            fontWeight: "bold",
+            cursor: "pointer",
+            flex: "1 1 45%",
+            border: `1px solid ${colors.border}`,
+            boxShadow: `0 0 8px ${colors.glow}`,
+            ":hover": {
+              transform: "scale(1.05)",
+            },
+            marginLeft: "4px"
+          }}
+          onClick={() => setToggleAnswer(!toggleAnswer)}
+        >
+          {toggleAnswer ? "Hide Answer Globally" : "Show Answer Globally"}
         </button>
 
         <h1
@@ -323,14 +392,14 @@ export default function KanjiFlashcard() {
           <p style={{ color: colors.textSecondary, fontSize: "clamp(14px, 4vw, 20px)" }}>
             Kun'yomi (Japanese reading): {data.readings_kun?.join(", ")} ({data.readings_kun_romaji?.join(", ")})
           </p>
-        </>: null}
+        </> : null}
 
         {showHint && (
           <p style={{ color: colors.hint, fontSize: "clamp(14px, 4vw, 20px)", fontStyle: "italic" }}>
             Hint: {data.wk_radicals?.join(", ")}
           </p>
         )}
-        {showAnswer ? (
+        {showAnswer || toggleAnswer ? (
           <p style={{ color: colors.answer, fontSize: "clamp(18px, 5vw, 24px)", fontWeight: "bold" }}>
             Meaning: {data.meanings?.join(", ")}
           </p>
@@ -344,6 +413,7 @@ export default function KanjiFlashcard() {
           ref={checkFurinagaRef}
           type="text"
           placeholder="Enter furigana"
+          onKeyDown={handleKeyPressFurigana}
           style={{
             marginBottom: "16px",
             padding: "12px",
@@ -378,9 +448,8 @@ export default function KanjiFlashcard() {
             },
           }}
           onClick={() => {
-            const furigana =  checkFurinagaRef.current.value;
-            const isFuriganaCorrect = data.readings_on_romaji?.map(r => r.toLowerCase()).includes(furigana.toLowerCase()) || data.readings_kun_romaji?.map(r => r.toLowerCase()).includes(furigana.toLowerCase());
-            showToast(isFuriganaCorrect ? "Correct Furigana" : "Incorrect Furigana", isFuriganaCorrect ? "#00ff88" : "#ff4444");
+            checkFurinaga()
+            nextKanji()
           }}
         >
           Check Furigana
@@ -528,79 +597,79 @@ export default function KanjiFlashcard() {
           >
             Next
           </button>
-          {showFailedOnly ? 
-          <>
-           <button
-           onClick={popAllKanji}
-           style={{
-             padding: "14px 24px",
-             background: colors.buttonNext,
-             color: "white",
-             borderRadius: "8px",
-             transition: "background 0.3s, transform 0.2s",
-             fontSize: "clamp(14px, 4vw, 16px)",
-             fontWeight: "bold",
-             cursor: "pointer",
-             flex: "1 1 45%",
-             border: `1px solid ${colors.border}`,
-             boxShadow: `0 0 8px ${colors.glow}`,
-             ":hover": {
-               transform: "scale(1.05)",
-             },
-           }}
-         >
-          Pop All Failed Kanji
-         </button>
+          {showFailedOnly ?
+            <>
+              <button
+                onClick={popAllKanji}
+                style={{
+                  padding: "14px 24px",
+                  background: colors.buttonNext,
+                  color: "white",
+                  borderRadius: "8px",
+                  transition: "background 0.3s, transform 0.2s",
+                  fontSize: "clamp(14px, 4vw, 16px)",
+                  fontWeight: "bold",
+                  cursor: "pointer",
+                  flex: "1 1 45%",
+                  border: `1px solid ${colors.border}`,
+                  boxShadow: `0 0 8px ${colors.glow}`,
+                  ":hover": {
+                    transform: "scale(1.05)",
+                  },
+                }}
+              >
+                Pop All Failed Kanji
+              </button>
 
-         <button
-           onClick={popKanji}
-           style={{
-             padding: "14px 24px",
-             background: colors.buttonNext,
-             color: "white",
-             borderRadius: "8px",
-             transition: "background 0.3s, transform 0.2s",
-             fontSize: "clamp(14px, 4vw, 16px)",
-             fontWeight: "bold",
-             cursor: "pointer",
-             flex: "1 1 45%",
-             border: `1px solid ${colors.border}`,
-             boxShadow: `0 0 8px ${colors.glow}`,
-             ":hover": {
-               transform: "scale(1.05)",
-             },
-           }}
-         >
-           Pop Current Kanji
-         </button>
-         </>
-          : null}
-         
+              <button
+                onClick={popKanji}
+                style={{
+                  padding: "14px 24px",
+                  background: colors.buttonNext,
+                  color: "white",
+                  borderRadius: "8px",
+                  transition: "background 0.3s, transform 0.2s",
+                  fontSize: "clamp(14px, 4vw, 16px)",
+                  fontWeight: "bold",
+                  cursor: "pointer",
+                  flex: "1 1 45%",
+                  border: `1px solid ${colors.border}`,
+                  boxShadow: `0 0 8px ${colors.glow}`,
+                  ":hover": {
+                    transform: "scale(1.05)",
+                  },
+                }}
+              >
+                Pop Current Kanji
+              </button>
+            </>
+            : null}
+
         </div>
+        <button
+          style={{
+            padding: "14px 24px",
+            background: colors.buttonHint,
+            color: "white",
+            borderRadius: "8px",
+            marginTop: "16px",
+            transition: "background 0.3s, transform 0.2s",
+            width: "100%",
+            maxWidth: "400px",
+            fontSize: "clamp(14px, 4vw, 16px)",
+            fontWeight: "bold",
+            cursor: "pointer",
+            border: `1px solid ${colors.border}`,
+            boxShadow: `0 0 8px ${colors.glow}`,
+            ":hover": {
+              transform: "scale(1.05)",
+            },
+          }}
+          onClick={() => setShowKeyboard(true)}
+        >
+          Show Japanese Keyboard
+        </button>
       </div>
-      <button
-        style={{
-          padding: "14px 24px",
-          background: colors.buttonHint,
-          color: "white",
-          borderRadius: "8px",
-          marginTop: "16px",
-          transition: "background 0.3s, transform 0.2s",
-          width: "100%",
-          maxWidth: "400px",
-          fontSize: "clamp(14px, 4vw, 16px)",
-          fontWeight: "bold",
-          cursor: "pointer",
-          border: `1px solid ${colors.border}`,
-          boxShadow: `0 0 8px ${colors.glow}`,
-          ":hover": {
-            transform: "scale(1.05)",
-          },
-        }}
-        onClick={() => setShowKeyboard(true)}
-      >
-        Show Japanese Keyboard
-      </button>
       {showKeyboard && (
         <div
           style={{
@@ -619,7 +688,7 @@ export default function KanjiFlashcard() {
           <div
             style={{
               position: "absolute",
-              bottom:0,
+              bottom: 0,
               background: colors.card,
               padding: "20px",
               borderRadius: "8px",
@@ -629,20 +698,28 @@ export default function KanjiFlashcard() {
             <button
               style={{
                 position: "absolute",
-                top: "10px",
-                right: "10px",
+                top: "30px",
+                right: "40px",
                 background: "transparent",
                 border: "none",
                 color: colors.textPrimary,
                 fontSize: "24px",
                 cursor: "pointer",
+                backgroundColor: colors.buttonHint,
+                borderRadius: "50%",
+                width: "30px",
+                height: "30px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                boxShadow: `0 0 8px ${colors.glow}`,
               }}
               onClick={() => setShowKeyboard(false)}
             >
               &times;
             </button>
             <JapaneseKeyboard hints={[...(data?.readings_on ?? []), ...(data?.readings_kun ?? [])]} />
-            </div>
+          </div>
         </div>
       )}
     </div>

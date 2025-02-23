@@ -49,8 +49,11 @@ const JapaneseKeyboard = ({ hints = [] }) => {
     const [buttonSize, setButtonSize] = useState(parseInt(localStorage.getItem("buttonSize")) || 40); // Default button size
     const [currentHintIndex, setCurrentHintIndex] = useState(0);
     const [fontSize, setFontSize] = useState(parseInt(localStorage.getItem("fontSize")) || 14);
+    const [toggleHints, setToggleHints] = useState(JSON.parse(localStorage.getItem("toggleHints")) || false);
 
-
+    useEffect(() => {
+        localStorage.setItem("toggleHints", JSON.stringify(toggleHints));
+    }, [toggleHints]);
     // Save buttonSize and fontSize to localStorage whenever they change
     useEffect(() => {
         localStorage.setItem("buttonSize", buttonSize.toString());
@@ -89,12 +92,19 @@ const JapaneseKeyboard = ({ hints = [] }) => {
         setFontSize(prevSize => prevSize - 1.2);
     };
 
+    const toggleHint = () => {
+        setToggleHints(!toggleHints);
+    }
     return (
         <div style={{ padding: "20px", maxWidth: "96%", margin: "0 auto", backgroundColor: colors.background, borderRadius: "10px", boxShadow: `0 4px 10px ${colors.glow}`, overflowY: "auto", maxHeight: "80vh" }}>
             {/* Display the current hint */}
-            <div style={{ textAlign: "center", marginBottom: "20px", fontSize: "24px", color: colors.textPrimary }}>
+            {toggleHints ? 
+            <div onClick={toggleHint} style={{ textAlign: "center", marginBottom: "20px", fontSize: "24px", color: colors.textPrimary }}>
                 Current Hint: {hints[currentHintIndex]}
-            </div>
+            </div>            
+            : <div onClick={toggleHint} style={{ textAlign: "center", marginBottom: "20px", fontSize: "24px", color: colors.textPrimary }}>
+            Reveal Hint
+        </div>   }
 
             {/* Input field */}
             <input 
@@ -244,7 +254,7 @@ const JapaneseKeyboard = ({ hints = [] }) => {
                     onMouseOver={(e) => e.target.style.backgroundColor = colors.hint}
                     onMouseOut={(e) => e.target.style.backgroundColor = colors.buttonNext}
                 >
-                    Increase Button Size
+                   +
                 </button>
 
                 <button 
@@ -262,7 +272,7 @@ const JapaneseKeyboard = ({ hints = [] }) => {
                     onMouseOver={(e) => e.target.style.backgroundColor = colors.hint}
                     onMouseOut={(e) => e.target.style.backgroundColor = colors.buttonPrev}
                 >
-                    Decrease Button Size
+                    -
                 </button>
             </div>
         </div>
