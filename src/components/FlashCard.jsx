@@ -27,13 +27,14 @@ export default function KanjiFlashcard() {
   useEffect(() => {
     localStorage.setItem("showReadings", showReadings.toString());
   }, [showReadings])
+  
   useEffect(() => {
     if (showFailedOnly) {
       localStorage.setItem("lastNonFailedKanjiIndex", currentIndex);
       setCurrentIndex(0);
     } else if (!showFailedOnly) {
-      if (localStorage.getItem("lastNonFailedKanjiIndex") !== null) {
-        setCurrentIndex(parseInt(localStorage.getItem("lastNonFailedKanjiIndex")));
+      if (localStorage.getItem("lastIndex") !== null) {
+        setCurrentIndex(parseInt(localStorage.getItem("lastIndex")));
       }
     }
 
@@ -456,8 +457,9 @@ return (
           },
         }}
         onClick={() => {
-          checkFurinaga()
-          nextKanji()
+          if(checkFurinaga()){
+            nextKanji()
+          }
         }}
       >
         Check Furigana
