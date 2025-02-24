@@ -45,7 +45,13 @@ const Navbar = ({ currentView, setCurrentView }) => {
 
 function App() {
   const [kanjiData, setKanjiData] = useState(null);
-  const [currentView, setCurrentView] = useState('kanji-list'); // Default view
+  const [currentView, setCurrentView] = useState(() => {
+    return localStorage.getItem('currentView') || 'kanji-list'; // Default view
+  });
+
+  useEffect(() => {
+    localStorage.setItem('currentView', currentView);
+  }, [currentView]);
 
   useEffect(() => {
     fetch("kanji_data_with_romaji_new_test.json")
