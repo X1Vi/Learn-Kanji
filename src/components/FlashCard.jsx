@@ -348,7 +348,8 @@ return (
           ":hover": {
             transform: "scale(1.05)",
           },
-          marginRight: "4px"
+          marginRight: "4px",
+          marginBottom: "8px"
         }}
         onClick={() => setShowReadings(!showReadings)}
       >
@@ -357,6 +358,7 @@ return (
 
       <button
         style={{
+          marginTop: "8px",
           padding: "14px 24px",
           background: colors.buttonHint,
           color: "white",
