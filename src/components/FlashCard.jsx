@@ -459,6 +459,10 @@ return (
         onClick={() => {
           if(checkFurinaga()){
             nextKanji()
+            showToast(checkFurinaga() ? "Correct" : "Incorrect", checkFurinaga() ? "#00ff88" : "#ff4444");
+          }
+          else{
+            showToast(checkFurinaga() ? "Correct" : "Incorrect", checkFurinaga() ? "#00ff88" : "#ff4444");
           }
         }}
       >
