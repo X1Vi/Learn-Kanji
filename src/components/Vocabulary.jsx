@@ -17,10 +17,18 @@ function Vocabulary() {
     const [wordList, setWordList] = useState([]);
     const [meaningList, setMeaningList] = useState([]);
     const [showMeaning, setShowMeaning] = useState(false);
-    const [currentSet, setCurrentSet] = useState(0);
+    const [currentSet, setCurrentSet] = useState(() => {
+        const savedSet = localStorage.getItem("currentSet");
+        return savedSet ? parseInt(savedSet, 10) : 0;
+    });
     const [selectedWord, setSelectedWord] = useState(null);
     const [selectedMeaning, setSelectedMeaning] = useState(null);
     const [matchedPairs, setMatchedPairs] = useState([]);
+    const [pageInput, setPageInput] = useState(""); // State for user input
+
+    useEffect(() => {
+        localStorage.setItem("currentSet", currentSet.toString());
+    }, [currentSet]);
 
     useEffect(() => {
         fetch("vocabData.json")
@@ -29,7 +37,7 @@ function Vocabulary() {
                 let formattedPairs = fetchedData
                     .slice(currentSet, currentSet + 8)
                     .map((item, index) => ({
-                        id: `${item[0]}-${item[1]}-${index}`, // Ensure unique ID
+                        id: `${item[0]}-${item[1]}-${index}`,
                         word: item[0],
                         furigana: item[1],
                         meaning: item[2].join(", "),
@@ -55,6 +63,19 @@ function Vocabulary() {
 
     const prevSet = () => {
         setCurrentSet((prev) => (prev > 0 ? prev - 8 : 0));
+    };
+
+    const handlePageInputChange = (e) => {
+        setPageInput(e.target.value); // Update the input value
+    };
+
+    const goToPage = () => {
+        const pageNumber = parseInt(pageInput, 10);
+        if (!isNaN(pageNumber) && pageNumber >= 0) {
+            setCurrentSet(pageNumber * 8); // Convert page number to set index
+        } else {
+            alert("Please enter a valid page number.");
+        }
     };
 
     const copyToClipboard = (text, event) => {
@@ -85,6 +106,35 @@ function Vocabulary() {
     return (
         <div style={{ backgroundColor: colors.background, minHeight: "100vh", padding: "20px", color: colors.textPrimary }}>
             <h1 style={{ textAlign: "center", color: colors.hint }}>Match the Pairs</h1>
+            <div style={{ textAlign: "center", marginTop: "20px" }}>
+                <input
+                    type="number"
+                    placeholder="Enter page number"
+                    value={pageInput}
+                    onChange={handlePageInputChange}
+                    style={{
+                        padding: "10px",
+                        borderRadius: "5px",
+                        border: `1px solid ${colors.border}`,
+                        backgroundColor: colors.card,
+                        color: colors.textPrimary,
+                        marginRight: "10px",
+                    }}
+                />
+                <button
+                    onClick={goToPage}
+                    style={{
+                        backgroundColor: colors.button,
+                        color: colors.textPrimary,
+                        padding: "10px 20px",
+                        border: `1px solid ${colors.border}`,
+                        borderRadius: "5px",
+                        cursor: "pointer",
+                    }}
+                >
+                    Go to Page
+                </button>
+            </div>
             <button
                 onClick={() => setShowMeaning(!showMeaning)}
                 style={{
@@ -200,7 +250,6 @@ function Vocabulary() {
             >
                 Back
             </button>
-
         </div>
     );
 }
