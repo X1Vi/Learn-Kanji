@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import "../src/index.css";
 import KanjiFlashcard from './components/FlashCard';
 import KanjiList from './components/KanjiCard';
+import Vocabulary from './components/Vocabulary';
 
 const Navbar = ({ currentView, setCurrentView }) => {
   return (
     <nav style={{ backgroundColor: '#333', color: 'white', padding: '16px', display: 'flex', justifyContent: 'space-between' }}>
-      <h1 style={{ fontSize: '20px', fontWeight: 'bold' }}>Kanji Explorer</h1>
       <ul style={{ display: 'flex', gap: '16px', listStyle: 'none', margin: 0, padding: 0 }}>
         <li>
           <button
@@ -38,6 +38,22 @@ const Navbar = ({ currentView, setCurrentView }) => {
             Kanji List
           </button>
         </li>
+
+        <li>
+          <button
+            onClick={() => setCurrentView('vocabulary')}
+            style={{
+              color: currentView === 'vocabulary' ? '#ffcc00' : 'white',
+              textDecoration: 'none',
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              fontSize: '16px',
+            }}
+          >
+            Vocabulary
+          </button>
+        </li>
       </ul>
     </nav>
   );
@@ -67,6 +83,7 @@ function App() {
       <Navbar currentView={currentView} setCurrentView={setCurrentView} />
         {currentView === 'flashcard' && <KanjiFlashcard kanjiData={kanjiData} />}
         {currentView === 'kanji-list' && <KanjiList kanjiData={kanjiData} />}
+        {currentView === 'vocabulary' && <Vocabulary />}
       </>
       ) : (
       <p>Loading kanji data...</p>
