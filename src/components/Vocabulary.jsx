@@ -96,12 +96,22 @@ function Vocabulary() {
     };
 
     const checkMatch = (wordObj, meaningObj) => {
-        if (wordObj && meaningObj && wordObj.id === meaningObj.id) {
-            setMatchedPairs((prev) => [...prev, wordObj]);
-            setSelectedWord(null);
-            setSelectedMeaning(null);
+        if (wordObj && meaningObj) {
+            // Find the meaning object that matches the word and includes the meaningObj
+            const matchingMeaning = meaningList.find(
+                (meaningObject) => meaningObject.word === wordObj.word && meaningObject === meaningObj
+            );
+    
+            if (matchingMeaning) {
+                setMatchedPairs((prev) => [...prev, wordObj]);
+                setSelectedWord(null);
+                setSelectedMeaning(null);
+                
+                console.log("Matched Meaning Object:", matchingMeaning); // Debugging log
+            }
         }
     };
+    
 
     return (
         <div style={{ backgroundColor: colors.background, minHeight: "100vh", padding: "20px", color: colors.textPrimary }}>
